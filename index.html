@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>@martin.sram3k</title>
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+  <table align="center" width="95%" cellpadding="5px" class="topbar">
+
+    <tr>
+      <td>
+        <div><a class="menuactive" href="index.html">DOMŮ</a></div>
+      </td>
+      <td>
+        <div><a class="menu" href="photos.html">FOTKY</a></div>
+      </td>
+      <td>
+        <div><a class="menu" href="gd.html">GRAFIKA</a></div>
+      </td>
+      <td>
+        <div><a class="menu" href="aboutme.html" class="active">O MĚ</a></div>
+      </td>
+    </tr>
+
+  </table>
+
+  <!--
+  <img class="homeimg" src="photos/home.jpg">
+-->
+
+<img src="photos/homevideo/2.jpg" alt="" id="imageContainer">
+
+  <div align="center">
+
+    <img class="img" src="photos/aboutme.png">
+    <a href="photos.html"><img class="img" src="photos/fotky.png"></a>
+    <a href="gd.html"><img class="img" src="photos/template.png"></a>
+
+
+  </div>
+
+  <!--
+  <table width="90%" align="center" cellpadding="20px" cellspacing="30px" style="padding-bottom: 100px;">
+
+    <tr>
+
+      <td> <img class="img2" src="photos/aboutme.png"> </td>
+      <td><a href="photos.html"><img class="img2" src="photos/_DSC0386.png"></a> </td>
+      <td><a href="gd.html"><img class="img2" src="photos/template.png"></a></td>
+
+    </tr>
+
+  </table>
+-->
+
+
+
+
+  <!--
+   <div style="padding-top: 200px;">
+
+    <div id="pata" class="pata"><a class="pata" style="font-weight: bold; padding-left: 20px;"
+        href="mailto: martinsramek040707@gmail.com">Email: martinsramek040707@gmail.com</a>
+
+      <a href="https://www.facebook.com/techmarek/"> <img class="icon" src="icony/facebook.svg"> </a>
+      <a href="https://linktr.ee/martin.sram3k"> <img class="icon" src="icony/tree.svg"> </a>
+      <a href="https://www.instagram.com/martin.sram3k/"> <img class="icon" src="icony/ig.svg"> </a>
+      
+
+    </div> -->
+
+  <footer>
+
+    <table width="80%" align="center" class="table" cellpadding="10px" border="0px">
+      <tr>
+        <td>
+          <h3>
+            <div class="footer-content">
+              <a class="pata" style="font-weight: bold; padding-left: 20px;"
+                href="mailto: martinsramek040707@gmail.com">Email: martinsramek040707@gmail.com</a>
+          </h3>
+          </div>
+        </td>
+      </tr>
+
+
+    </table>
+
+    <table width="40%" align="center" class="table" border="0px" style="padding-bottom: 50px;">
+      <tr>
+        <td> <a href="https://www.instagram.com/martin.sram3k/"><img class="icon" src="icony/ig.svg"></a></td>
+        <td><a href="https://www.facebook.com/techmarek/"><img class="icon" src="icony/facebook.svg"> </a></td>
+        <td> <a href="https://linktr.ee/martin.sram3k"><img class="icon" src="icony/tree.svg"></a></td>
+      </tr>
+
+
+    </table>
+
+  </footer>
+
+
+
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive1";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    const image = document.getElementById('hoverImage');
+
+    // Array of image sources
+    const imageSources = ["photos/homevideo/1" ,'photos/homevideo/2.jpg', 'photos/homevideo/5.jpg', 'photos/homevideo/4.jpg', 'photos/homevideo/3.jpg', 'photos/homevideo/6.jpg', 'photos/homevideo/7.jpg'];
+    let currentIndex = 0;
+
+    function changeImage() {
+      image.classList.add('hidden'); // apply transition effect
+      setTimeout(() => {
+        image.src = imageSources[currentIndex];
+        image.classList.remove('hidden'); // remove hidden class after changing the source
+        currentIndex = (currentIndex + 1) % imageSources.length; // move to the next image
+      }, 500); // adjust the time based on your needs
+    }
+
+    // Initial image change
+    changeImage();
+
+    // Set interval to change image every 3 seconds (adjust the time as needed)
+    setInterval(changeImage, 3000);
+
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>@martin.sram3k</title>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+    <table align="center" width="95%" cellpadding="5px" class="topbar">
+
+        <tr>
+            <td>
+                <div><a class="menu" href="index.html">DOMŮ</a></div>
+            </td>
+            <td>
+                <div><a class="menuactive" href="photos.html">FOTKY</a></div>
+            </td>
+            <td>
+                <div><a class="menu" href="gd.html">GRAFIKA</a></div>
+            </td>
+            <td>
+                <div><a class="menu" href="aboutme.html" class="active">O MĚ</a></div>
+            </td>
+        </tr>
+
+    </table>
+
+
+
+
+    <img src="photos/photosvideo/2.jpg" alt="" id="imageContainer">
+
+
+    <div class="mytext" id="mytext">FOTKY AKCÍ</div>
+
+
+
+
+
+
+
+    <table width="80%" align="center" class="table" border="0px" style="border-radius: 20px;">
+
+        <tr>
+
+            <td><img class="img2 img22" src="galery/akce/1.jpg"></td>
+            <td><img class="img2 img22" src="galery/akce/2.jpg"></td>
+
+        </tr>
+
+        <tr>
+
+            <td><img class="img2 img22" src="galery/akce/3.jpg"></td>
+            <td><img class="img2 img22" src="galery/akce/6.jpg"></td>
+
+
+        </tr>
+
+        <tr>
+
+            <td><img class="img2 img22" src="galery/akce/4.jpg"></td>
+            <td><img class="img2 img22" src="galery/akce/5.jpg"></td>
+
+        </tr>
+
+        <tr>
+
+            <td><img class="img2 img22" src="galery/akce/6.jpg"></td>
+            <td><img class="img2 img22" src="galery/akce/7.jpg"></td>
+
+
+        </tr>
+
+       
+
+    </table>
+
+
+
+
+
+    <footer>
+        <table width="80%" align="center" class="table" cellpadding="10px" border="0px">
+            <tr>
+                <td>
+                    <h3>
+                        <div class="footer-content">
+                            <a class="pata" style="font-weight: bold; padding-left: 20px;"
+                                href="mailto: martinsramek040707@gmail.com">Email: martinsramek040707@gmail.com</a>
+                    </h3>
+                    </div>
+                </td>
+            </tr>
+
+
+        </table>
+
+        <table width="40%" align="center" class="table" border="0px" style="padding-bottom: 50px;">
+            <tr>
+                <td> <a href="https://www.instagram.com/martin.sram3k/"><img class="icon" src="icony/ig.svg"></a></td>
+                <td><a href="https://www.facebook.com/techmarek/"><img class="icon" src="icony/facebook.svg"> </a></td>
+                <td> <a href="https://linktr.ee/martin.sram3k"><img class="icon" src="icony/tree.svg"></a></td>
+            </tr>
+
+
+        </table>
+    </footer>
+
+    <script>
+
+        let image = document.getElementById("hoverImage");
+        let images = ['photos/photosvideo/2.jpg', 'photos/photosvideo/5.jpg', 'photos/photosvideo/4.jpg', 'photos/photosvideo/3.jpg', 'photos/photosvideo/6.jpg', 'photos/photosvideo/7.jpg']
+        setInterval(function () {
+            let random = Math.floor(Math.random() * 8);
+            image.src = images[random];
+        }, 2000)
+
+
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive1";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function myFunction1() {
+            var x = document.getElementById("mytext");
+            if (x.className === "mytext") {
+                x.className += " responsive2";
+            } else {
+                x.className = "mytext";
+            }
+        }
+
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+
+</body>
+
+</html>

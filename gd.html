@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>@martin.sram3k</title>
+</head>
+
+<body>
+  
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+	
+  <table align="center"  width="95%" cellpadding="5px" class="topbar">
+
+    <tr>
+        <td>
+            <div><a class="menu" href="index.html">DOMŮ</a></div>
+        </td>
+        <td>
+            <div><a class="menu" href="photos.html">FOTKY</a></div>
+        </td>
+        <td>
+            <div><a class="menuactive" href="gd.html">GRAFIKA</div>
+        </td>
+        <td>
+            <div><a class="menu" href="aboutme.html" class="active">O MĚ</a></div>
+        </td>
+    </tr>
+
+</table>
+
+
+<img src="photos/gdvideo/2.jpg" alt="" id="imageContainer">
+
+<div class="mytext" >MOJE GRAFIKA</div>
+
+
+
+<table  width="80%" align="center" class="table" border="0px" style="border-radius: 20px;">
+
+  <tr>
+
+    <td colspan = "2"><img class="img2 img22"  src="photos/gd/1.jpg"></td>
+
+  </tr>
+
+  <tr>
+
+    <td><img class="img2 img22"  src="photos/gd/2.jpg"></td>
+    <td><img class="img2 img22"  src="photos/gd/3.jpg"></td>
+
+
+  </tr>
+
+  <tr>
+
+    <td><img class="img2 img22"  src="photos/gd/4.jpg"> </td>
+    <td><img class="img2 img22"  src="photos/gd/5.jpg"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan = "2"><img class="img2 img22"  src="photos/gd/6.jpg"></td>
+    
+
+  </tr>
+
+  <tr>
+
+    <td><img class="img2 img22"  src="photos/gd/7.jpg"> </td>
+    <td><img class="img2 img22"  src="photos/gd/8.jpg">  </td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan = "2"><img class="img2 img22"  src="photos/gd/9.jpg"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan = "2"><img class="img2 img22"  src="photos/gd/10.jpg"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan = "2"><img class="img2 img22"  src="photos/gd/11.jpg"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan = "2"><img class="img2 img22"  src="photos/gd/12.jpg"></td>
+
+  </tr>
+
+  <tr>
+
+    <td><img class="img2 img22"  src="photos/gd/13.jpg"> </td>
+    <td><img class="img2 img22"  src="photos/gd/14.jpg">  </td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan = "2">  <div class="container">
+
+      <!-- Full-width images with number text -->
+      <div class="mySlides">
+        <div class="numbertext"></div>
+          <img src="photos/gd/15.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext"></div>
+          <img src="photos/gd/16.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext"></div>
+          <img src="photos/gd/17.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext"></div>
+          <img src="photos/gd/18.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext"></div>
+          <img src="photos/gd/19.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext"></div>
+          <img src="photos/gd/20.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+          <div class="numbertext"></div>
+            <img  src="photos/gd/21.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext"></div>
+            <img src="photos/gd/22.jpg" style="width:100%">
+        </div>
+    
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+      </td>
+
+  </tr>
+
+  
+
+</table>
+
+
+<footer>
+
+  <table  width="80%" align="center" class = "table" cellpadding = "10px" border="0px" >
+    <tr>
+        <td>  <h3>
+            <div class="footer-content">
+              <a class="pata" style="font-weight: bold; padding-left: 20px;"
+                href="mailto: martinsramek040707@gmail.com">Email: martinsramek040707@gmail.com</a>
+          </h3>
+          </div>  </td>
+    </tr>
+
+
+</table>
+
+<table width="40%" align="center" class = "table"  border="0px" style="padding-bottom: 50px;" >
+    <tr>
+        <td> <a  href="https://www.instagram.com/martin.sram3k/"><img class="icon" src="icony/ig.svg"></a></td>
+        <td><a href="https://www.facebook.com/techmarek/"><img class="icon" src="icony/facebook.svg"> </a></td>
+        <td>  <a href="https://linktr.ee/martin.sram3k"><img class="icon" src="icony/tree.svg"></a></td>
+    </tr>
+
+
+</table>
+
+</footer>
+
+  <script>
+
+const image = document.getElementById('hoverImage');
+
+// Array of image sources
+const imageSources = [ "photos/gdvideo/1" , 'photos/gdvideo/2.jpg', 'photos/gdvideo/5.jpg', 'photos/gdvideo/4.jpg', 'photos/gdvideo/3.jpg', 'photos/gdvideo/6.jpg', 'photos/gdvideo/7.jpg'];
+let currentIndex = 0;
+
+function changeImage() {
+  image.classList.add('hidden'); // apply transition effect
+  setTimeout(() => {
+    image.src = imageSources[currentIndex];
+    image.classList.remove('hidden'); // remove hidden class after changing the source
+    currentIndex = (currentIndex + 1) % imageSources.length; // move to the next image
+  }, 500); // adjust the time based on your needs
+}
+
+// Initial image change
+changeImage();
+
+// Set interval to change image every 3 seconds (adjust the time as needed)
+setInterval(changeImage, 3000);
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive1";
+      } else {
+        x.className = "topnav";
+      }
+    }
+	  
+    function myFunction1() {
+      var x = document.getElementById("mytext");
+      if (x.className === "mytext") {
+        x.className += " responsive2";
+      } else {
+        x.className = "mytext";
+      }
+    }
+
+    let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+   
+  </script>
+
+  
+	
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>@martin.sram3k</title>
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+  <table align="center" width="95%" cellpadding="5px" class="topbar">
+
+    <tr>
+      <td>
+        <div><a class="menu" href="index.html">DOMŮ</a></div>
+      </td>
+      <td>
+        <div><a class="menu" href="photos.html">FOTKY</a></div>
+      </td>
+      <td>
+        <div><a class="menu" href="gd.html">GRAFIKA</a></div>
+      </td>
+      <td>
+        <div><a class="menuactive" href="aboutme.html" class="active">O ME</a></div>
+      </td>
+    </tr>
+
+  </table>
+
+
+  <img src="photos/aboutmevideo/5.jpg" alt="" id="imageContainer">
+
+
+  <table width="80%" align="center" class="table" cellpadding="10px" border="0px">
+    <tr>
+      <td><img class="img02" src="photos/aboutme/1.jpg"></td>
+      <td>
+        <p>Jsem Martin Šrámek, šestnáctiletý začínající fotograf a grafik, který se vášnivě věnuje světu vizuálního
+          umění. Mé dovednosti jsem rozvíjel nejen ve škole, ale i na praxi při různých projektech. Jednou z mých
+          významných zkušeností bylo fotografování na události s názvem WAFK, kde jsem měl možnost zachytit dynamiku a
+          atmosféru této akce. </p>
+        <p>Kromě toho jsem mám čest spolupracovat s marketingovou agenturou DISOA Marketing, kde působím jako fotograf.
+          Pro WAFK jsem navíc vytvářel grafické prvky, jako jsou diplomy, poukazy a billboardy. Tato činnost mi poskytla
+          širokou škálu zkušeností a příležitostí rozvíjet své dovednosti v oblasti grafického designu. </p>
+        <p>Mým cílem je neustále se zdokonalovat a rozšiřovat své portfolio. Doufám, že budu mít možnost dále přispívat
+          k tvorbě vizuálního obsahu a podílet se na zajímavých projektech v oblasti fotografie a grafického designu.
+        </p>
+
+      </td>
+
+    </tr>
+
+    <tr>
+      <td colspan="2"><img class="img03" src="photos/aboutme/1.jpg"></td>
+    </tr>
+  </table>
+
+
+  <footer>
+
+    <table width="80%" align="center" class="table" cellpadding="10px" border="0px">
+      <tr>
+        <td>
+          <h3>
+            <div class="footer-content">
+              <a class="pata" style="font-weight: bold; padding-left: 20px;"
+                href="mailto: martinsramek040707@gmail.com">Email: martinsramek040707@gmail.com</a>
+          </h3>
+          </div>
+        </td>
+      </tr>
+
+
+    </table>
+
+    <table width="40%" align="center" class="table" border="0px" style="padding-bottom: 50px;">
+      <tr>
+        <td> <a href="https://www.instagram.com/martin.sram3k/"><img class="icon" src="icony/ig.svg"></a></td>
+        <td><a href="https://www.facebook.com/techmarek/"><img class="icon" src="icony/facebook.svg"> </a></td>
+        <td> <a href="https://linktr.ee/martin.sram3k"><img class="icon" src="icony/tree.svg"></a></td>
+      </tr>
+
+
+    </table>
+
+  </footer>
+
+
+
+
+  <script>
+
+    const image = document.getElementById('hoverImage');
+
+    // Array of image sources
+    const imageSources = ["photos/aboutmevideo/1", 'photos/aboutmevideo/2.jpg', 'photos/aboutmevideo/5.jpg', 'photos/aboutmevideo/4.jpg', 'photos/gdvideo/3.jpg', 'photos/aboutmevideo/6.jpg'];
+    let currentIndex = 0;
+
+    function changeImage() {
+      image.classList.add('hidden'); // apply transition effect
+      setTimeout(() => {
+        image.src = imageSources[currentIndex];
+        image.classList.remove('hidden'); // remove hidden class after changing the source
+        currentIndex = (currentIndex + 1) % imageSources.length; // move to the next image
+      }, 500); // adjust the time based on your needs
+    }
+
+    // Initial image change
+    changeImage();
+
+    // Set interval to change image every 3 seconds (adjust the time as needed)
+    setInterval(changeImage, 3000);
+
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive1";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+
+
+</body>
+
+</html>
