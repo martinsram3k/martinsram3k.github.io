@@ -130,7 +130,7 @@ html {
 .pata {
   font-weight: normal;
   font-size: 200%;
-
+  padding-top: 30px;
   color: #f2f2f2;
   text-align: center;
 
@@ -295,21 +295,14 @@ footer {
   left: 0;
   right: 0;
   background: #000000;
-  height: 600px;
+  height: 700px;
   width: 100%;
-
   padding-top: 40px;
   color: #fff;
 }
 
 
-@media screen and (max-width: 1000px) {
-  footer {
-    height: 400%;
-  }
 
-
-}
 
 
 .footer-content {
@@ -465,7 +458,7 @@ footer {
 .table {
   border-spacing: 20px;
   padding: 20px;
- 
+
 }
 
 @media (max-width:600px) {
@@ -743,7 +736,60 @@ p {
 
 #imageContainer {
   position: relative;
-  width: 100%; /* adjust the width and height as needed */
+  width: 100%;
+  /* adjust the width and height as needed */
   opacity: 70%;
 }
 
+.spoluprace {
+  font-weight: bold;
+  font-size: 200%;
+  padding-bottom: 50px;
+  color: #000000;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .spoluprace {
+    font-size: 160%;
+
+  }
+
+
+}
+
+@media screen and (max-width: 850px) {
+  .spoluprace {
+    font-size: 130%;
+
+  }
+
+
+}
+
+@media screen and (max-width: 700px) {
+  .spoluprace {
+    font-size: 100%;
+
+  }
+
+
+}
+
+@media screen and (max-width: 550px) {
+  .spoluprace {
+    font-size: 70%;
+
+  }
+
+
+}
+
+@media screen and (max-width: 370px) {
+  .spoluprace {
+    font-size: 50%;
+
+  }
+
+
+}
