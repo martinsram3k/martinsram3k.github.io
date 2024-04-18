@@ -1,20 +1,22 @@
 .objednat {
-    font-family: "noka", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 29px;
-    color: white;
-    background-color: #45FF4D;
-    width: 170px;
-    height: 58px;
-    text-align: center;
-    border-radius: 20px;
-    padding-top: 20px;
+    width: 190px;
+    padding-top: 10px;
     transition: transform .2s;
 }
 
+@media screen and (max-width: 700px) {
+    .objednat {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .objednat {
+        width: 130px;
+    }
+}
+
 .objednat:hover {
-    background-color: #2b9930;
     transform: scale(1.2);
 }
 
@@ -25,13 +27,35 @@
     color: black;
     position: relative;
     top: 20px;
-    padding-left: 20px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .burger {
+        font-size: 60px;
+        top: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .burger {
+        font-size: 40px;
+        top: 30px;
+        padding-left: 2px;
+        margin-top: 20px;
+    }
 }
 
 .topnav {
     overflow: hidden;
-    width: 80%;
+    width: 90%;
 
+}
+
+@media screen and (max-width: 500px) {
+    .topnav {
+        width: 95%;
+    }
 }
 
 .topnav a {
@@ -41,12 +65,69 @@
     text-decoration: none;
 }
 
+.homeimg1 {
+    width: 100%;
+    display: block;
+}
+
+@media screen and (max-width: 640px) {
+    .homeimg1 {
+        display: none;
+    }
+}
+
+.tablehomeimg {
+    width: 80%;
+    padding: 30px;
+    padding-bottom: 60px;
+}
+
+@media screen and (max-width: 700px) {
+    .tablehomeimg {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tablehomeimg {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .homeimg1 {
+        width: 100%;
+    }
+}
+
 .homebold {
     font-family: "noka", sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 67px;
 }
+
+@media screen and (max-width: 1300px) {
+    .homebold {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .homebold {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .homebold {
+        font-size: 30px;
+    }
+}
+
+
 
 .homelight {
     font-family: "noka", sans-serif;
@@ -55,12 +136,53 @@
     font-size: 40px;
 }
 
+@media screen and (max-width: 1300px) {
+    .homelight {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .homelight {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .homelight {
+        font-size: 15px;
+    }
+}
+
+
+
 .homelight1 {
     font-family: "noka", sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 40px;
 }
+
+@media screen and (max-width: 1300px) {
+    .homelight1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .homelight1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .homelight1 {
+        font-size: 15px;
+    }
+}
+
+
+
 
 .zamereni {
     font-family: "noka", sans-serif;
@@ -71,36 +193,105 @@
     padding-top: 50px;
 }
 
+@media screen and (max-width: 1300px) {
+    .zamereni {
+        font-size: 90px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .zamereni {
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .zamereni {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .zamereni {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .zamereni {
+        font-size: 25px;
+    }
+}
+
 .homeimg {
     width: 100%;
     border-radius: 20px;
     transition: transform .2s;
 }
 
+@media screen and (max-width: 500px) {
+    .homeimg {
+        border-radius: 10px;
+    }
+}
+
 .homeimg:hover {
     transform: scale(1.05);
 }
 
-footer {
-    background-color: #E6E6E6;
-    height: 500px;
-    width: 100%;
-    text-align: center;
-    padding-top: 250px;;
+.patatabulka {
+    text-align: left;
 }
 
-.patalight {
+ul {
+    list-style: none;
+}
+
+.icony {
+    width: 15px;
+    padding: 5px;
+}
+
+.patatabulka {
+    background-color: rgb(167, 167, 167);
+}
+
+.pataligh {
     font-family: "noka", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 40px;
 }
 
+@media screen and (max-width: 950px) {
+    .pataligh {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .pataligh {
+        font-size: 20px;
+    }
+}
+
 .patabold {
     font-family: "noka", sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 67px;
+    font-size: 30px;
     color: black;
 
+}
+
+@media screen and (max-width: 950px) {
+    .patabold {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .patabold {
+        font-size: 10px;
+    }
 }
