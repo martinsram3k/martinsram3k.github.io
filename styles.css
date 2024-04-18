@@ -17,6 +17,7 @@
 }
 
 .objednat:hover {
+    rotate: -5deg;
     transform: scale(1.2);
 }
 
@@ -237,6 +238,7 @@
 
 .homeimg:hover {
     transform: scale(1.05);
+    
 }
 
 .patatabulka {
