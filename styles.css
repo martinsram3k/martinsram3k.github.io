@@ -91,10 +91,24 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .tablehomeimg {
-        width: 95%;
-        padding: 20px;
+        display: none;
+    }
+}
+
+.tablehomeimg1 {
+    width: 90%;
+    padding: 20px;
+    padding-bottom: 60px;
+    display: none;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .tablehomeimg1 {
+        display: flex;
     }
 }
 
