@@ -328,11 +328,11 @@ span {
     }
 }
 
- .td {
+.td {
     margin-top: auto;
- }
+}
 
- @media screen and (max-width: 850px) {
+@media screen and (max-width: 850px) {
     .td {
         display: none;
     }
