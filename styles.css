@@ -337,3 +337,73 @@ span {
         display: none;
     }
 }
+
+.fotky {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 12px rgb(202, 202, 202);
+}
+
+@media screen and (max-width: 970px) {
+    .fotky {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .fotky {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .fotky {
+        width: 80px;
+        border-radius: 10px;
+    }
+}
+
+.fotky-text {
+    font-size: 25px;
+    font-family: "noka", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5em;
+    text-align: left;
+
+}
+
+@media screen and (max-width: 970px) {
+    .fotky-text {
+        font-size: 17px;
+        line-height: 1.5em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .fotky-text {
+        font-size: 12px;
+
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .fotky-text {
+        font-size: 10px;
+
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .fotky-text {
+        font-size: 8px;
+
+    }
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
