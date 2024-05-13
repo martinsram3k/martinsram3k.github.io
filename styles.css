@@ -407,3 +407,56 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.fotky-2 {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 12px rgb(202, 202, 202);
+}
+
+.fotky-text-2 {
+    font-size: 35px;
+    font-family: "noka", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5em;
+    text-align: left;
+
+}
+
+
+@media screen and (max-width: 550px) {
+    .fotky-text-2 {
+        font-size: 20px;
+
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .fotky-text-2 {
+        font-size: 20px;
+
+    }
+}
+
+.tabulka-clanky1 {
+    display: block;
+}
+
+@media screen and (max-width: 700px) {
+    .tabulka-clanky1 {
+        display: none;
+
+    }
+}
+
+.tabulka-clanky2 {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .tabulka-clanky2 {
+        display: block;
+
+    }
+}
