@@ -1,0 +1,77 @@
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #1e90ff;
+  --secondary-color: #ff6347;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin: auto;
+}
+
+.hero-image {
+  width: 100%;
+  z-index: 0;
+  min-width: 100%;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 2px 10px rgba(241, 241, 241, 0.4);
+}
+
+.profile-pp {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: -300px;
+  border-radius: 20%;
+  width: 400px;
+  margin-bottom: -260px;
+}
+
+.hero-text {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 100px;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.hero-links li {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hero-links ul li img {
+filter: opacity(.5);
+  width: 100px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.hero-links ul li img:hover {
+  transform: scale(1.1);
+    filter: opacity(.6);
+}
