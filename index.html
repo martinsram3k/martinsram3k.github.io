@@ -5,12 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>martinsram3k</title>
         <link rel="stylesheet" href="style.css">
+
         <link rel="stylesheet" href="https://use.typekit.net/orf1ctf.css">
         <link rel="stylesheet" href="https://use.typekit.net/orf1ctf.css">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward" />
     </head>
     <body>
 
-        <nav>
+        <div class="top-button"><span class="material-symbols-outlined">
+                arrow_upward
+            </span></div>
+
+        <nav class="" >
             <ul class="nav-container">
                 <li class="nav-logo">
                     <a href="index.html"><h1 class="gunter">Martin
@@ -28,7 +35,9 @@
                 </li>
 
                 <li class="nav-contact">
-                    <div id="language-switcher"> <a href>CZ</a></div>
+                    <div id="language-switcher" style> <a href>CZ</a></div>
+                    <div id="language-switcher"> <a style="color: grey;"
+                            href>EN</a></div>
                     <a href="contact.html" class="komet"
                         id="kontakt">KONTAKT</a>
                 </li>
@@ -41,14 +50,112 @@
             </div>
 
             <div class="bgText">
-                <h3 style="font-size: 16rem;">GRAFIK</h3>
-                <h3 class="outline-text">& VIDEO EDITOR</h3>
+                <h3 class="gunter" style=" font-size: 16rem;">GRAFIK</h3>
+                <h3 style="letter-spacing: normal;" class="komet outline-text">&
+                    VIDEO EDITOR</h3>
             </div>
 
-            <img src="img/hero-image.png" alt="Hero Image"
-                class="hero-image">
-
         </div>
+
+        <div class="about">
+            <div class="colum1">
+                <img src="img/about.png">
+                <h3>Zájmy</h3>
+                <ul>
+                    <li>3D modelování a 3D tisk</li>
+                    <li>Fotografování</li>
+                    <li>PCB design</li>
+                    <li>Parkour</li>
+                    <li>Posilovna</li>
+                </ul>
+            </div>
+
+            <div class="colum2">
+                <div>
+                    <h3>Ahoj já jsem Martin</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Nam
+                        libero tempore, cum soluta nobis est eligendi optio
+                        cumque nihil impedit quo minus id quod maxime placeat
+                        facere possimus, omnis voluptas assumenda est, omnis
+                        dolor repellendus. Aliquam erat volutpat. Nulla quis
+                        diam. Donec ipsum massa, ullamcorper in, auctor et,
+                        scelerisque sed, est. Mauris suscipit, ligula sit amet
+                        pharetra semper, nibh ante cursus purus, vel sagittis
+                        velit mauris vel metus. Quisque porta. Nunc tincidunt
+                        ante vitae massa. Sed elit dui, pellentesque a, faucibus
+                        vel, interdum nec, diam. Etiam neque. Sed convallis
+                        magna eu sem. Lorem ipsum dolor sit amet, consectetuer
+                        adipiscing elit. Proin pede metus, vulputate nec,
+                        fermentum fringilla, vehicula vitae, justo. Suspendisse
+                        nisl. Sed vel lectus. Donec odio tempus molestie,
+                        porttitor ut, iaculis quis, sem. Integer lacinia.
+                        Integer malesuada. In dapibus augue non sapien. Nulla
+                        pulvinar eleifend sem.</p>
+                </div>
+
+                <div>
+                    <h3>Vzdělání</h3>
+                    <ul type="none">
+                        <li>Střední škola informatiky a cestovního ruchu SČMSD
+                            Humpolec, s.r.o.
+                            <br> <strong>Obor: Informační technologie</strong>
+                            <br> 2022 - 2029
+                        </li>
+                        <li>Střední škola informatiky a cestovního ruchu SČMSD
+                            Humpolec, s.r.o.
+                            <br> <strong>Obor: Reprodukční grafik</strong> <br>
+                            2022 - 2025
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="colum3">
+                <div>
+                    <h3>Pracovní zkušenosti</h3>
+                    <ul type="none">
+
+                        <li>Tisicikorun Video editor
+                            <br> <strong>Říjen 2025 - Součastnost</strong>
+
+                        </li>
+
+                        <li>ACO Industries, k.s. Asistent marketingu
+                            <br> <strong>Srpen 2025 - Srpen 2025</strong>
+
+                        </li>
+
+                        <li>JCgraphics s.r.o. Praxe
+                            <br> <strong>Leden 2023 - Červen 2025</strong>
+
+                        </li>
+
+                        <li>Leap Parkour Trenér
+                            <br> <strong>Červen 2023 - Součastnost</strong>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div>
+                    <h3>Dovednosti</h3>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe After Effects</li>
+                        <li>Blender</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
 
     </body>
 </html>

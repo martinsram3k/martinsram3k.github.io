@@ -11,6 +11,12 @@
   --gradient: linear-gradient(90deg, hsl(329, 100%, 36%), hsl(360, 100%, 55%));
 }
 
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -54,8 +60,29 @@ body {
   z-index: 1000;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
 nav {
   user-select: none; /* Zakáže výběr textu v navigaci */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out,
+  box-shadow 0.6s ease-in-out;
+}
+
+nav.scrolled {
+  /* Tady definujeme tvůj původní stín */
+  box-shadow: 10px 10px 30px rgba(61, 61, 61, 0.1);
 }
 
 /* Logo - zabere místo vlevo */
@@ -104,15 +131,18 @@ nav a {
 
 nav a:hover {
   color: var(--primary-color);
+  transition: color 0.3s ease-in-out;
 }
 #kontakt {
   padding: 10px 20px;
   background: var(--gradient);
   border-radius: 10px;
   color: white;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: transform 0.3s ease-in-out;
+}
+
+#kontakt:hover {
+  transform: scale(1.05);
 }
 
 #language-switcher {
@@ -124,9 +154,9 @@ nav a:hover {
   display: flex;
   flex-direction: column; /* Změna na column, aby šly prvky pod sebe */
   justify-content: start; /* Vycentrování vertikálně */
-  align-items: center;    /* Vycentrování horizontálně */
-  padding-top: 0;    
-  padding-top: 80px;     /* Odstranění horního paddingu, pokud chceš přesný střed */
+  align-items: center; /* Vycentrování horizontálně */
+  padding-top: 0;
+  padding-top: 80px; /* Odstranění horního paddingu, pokud chceš přesný střed */
   position: relative;
   overflow: hidden;
 }
@@ -149,12 +179,12 @@ nav a:hover {
   text-align: center;
   z-index: -1;
   user-select: none;
+  letter-spacing: 50px;
 }
 
 .outline-text {
   color: transparent; /* Průhledný vnitřek textu */
   -webkit-text-stroke: 5px var(--text-color); /* Tloušťka a barva obrysu */
-
 }
 
 .hero-section img {
@@ -165,3 +195,175 @@ nav a:hover {
   position: absolute;
   bottom: 0;
 }
+
+.about {
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 100%;
+  min-width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.colum1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 30%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.colum2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 30%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.colum3 {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  width: 30%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.colum1 img {
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
+  transform: rotate(-2deg);
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about .colum1 h3 {
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.about .colum1 ul li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 10px;
+}
+
+.about .colum2 h3 {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.about .colum2 ul {
+  padding: 0;
+}
+
+.about .colum2 li {
+  width: fit-content;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-top: 20px;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.about .colum3 h3 {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.about .colum3 ul {
+  padding: 0;
+}
+
+.about .colum3 li {
+  width: fit-content;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-top: 20px;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.colum1 img:hover {
+  transform: rotate(0deg) scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.top-button:hover {
+transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-button span {
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.top-button:hover span {
+  animation: buttonHop 1s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes buttonHop {
+  0%   {transform: translateY(2px);}
+  25%  {transform: translateY(-4px);}
+  50%  {transform: translateY(2px);}
+  100% {transform: translateY(0);}
+}
+
+/* Definice animace */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Prvek začne o 30px níže */
+  }
+  100%  {
+    opacity: 1;
+    transform: translateY(0);    /* Skončí na své pozici */
+  }
+}
+
+/* Třída, kterou dostanou prvky pro animaci */
+.reveal-init {
+  opacity: 0; /* Na začátku jsou neviditelné */
+}
+
+/* Tuto třídu přidáme pomocí JS po načtení */
+.is-loaded .reveal-init {
+  animation: fadeInUp 0.8s ease out forwards;
+}
+
+/* Přidáme zpoždění pro jednotlivé položky, aby se objevovaly postupně (stagger efekt) */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
