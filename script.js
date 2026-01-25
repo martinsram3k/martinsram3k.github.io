@@ -29,15 +29,20 @@ window.addEventListener('load', () => {
     });
 }); 
 
-// Tento kód vlož na konec svého HTML před </body>
 document.addEventListener('DOMContentLoaded', () => {
    const navbar = document.querySelector('nav');
+   const heroSection = document.querySelector('.hero-section');
+   const about = document.querySelector('.about');
+
+   // 1. Navigace se objeví okamžitě po načtení
    navbar.style.opacity = '1';
 
+   // 2. Hero sekce se objeví s prodlevou (např. 500ms = půl sekundy)
    setTimeout(() => {
-        if (navbar) {
-            navbar.classList.add('is-visible');
-            console.log("Animace spuštěna"); // Kontrola v konzoli (F12)
-        }
-    }, 100);
+       heroSection.style.opacity = '1';
+   }, 400); // Tady můžeš změnit číslo pro delší/kratší čekání
+
+    setTimeout(() => {
+       about.style.opacity = '1';
+   }, 800); // Tady můžeš změnit číslo pro delší/kratší čekání
 });

@@ -42,9 +42,6 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.7);
 
@@ -76,13 +73,15 @@ nav {
   right: 0;
   z-index: 1000;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out,
-  box-shadow 0.6s ease-in-out;
+  transition:
+    opacity 0.5s ease-in-out,
+    box-shadow 0.6s ease-in-out;
 }
 
 nav.scrolled {
   /* Tady definujeme tvůj původní stín */
-  box-shadow: 10px 10px 30px rgba(61, 61, 61, 0.1);
+  box-shadow: 10px 10px 30px rgba(61, 61, 61, 0.1) , inset 5px 5px 10px rgb(90, 90, 90);
+
 }
 
 /* Logo - zabere místo vlevo */
@@ -139,6 +138,7 @@ nav a:hover {
   border-radius: 10px;
   color: white;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 30px rgba(61, 61, 61, 0.3);
 }
 
 #kontakt:hover {
@@ -159,6 +159,8 @@ nav a:hover {
   padding-top: 80px; /* Odstranění horního paddingu, pokud chceš přesný střed */
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .hero-section h2 {
@@ -180,6 +182,7 @@ nav a:hover {
   z-index: -1;
   user-select: none;
   letter-spacing: 50px;
+  text-shadow: 10px 10px 30px rgba(61, 61, 61, 0.2);
 }
 
 .outline-text {
@@ -196,6 +199,7 @@ nav a:hover {
   bottom: 0;
 }
 
+
 .about {
   margin-left: 50px;
   margin-right: 50px;
@@ -207,6 +211,8 @@ nav a:hover {
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .colum1 {
@@ -297,7 +303,7 @@ nav a:hover {
 
 .colum1 img:hover {
   transform: rotate(0deg) scale(1.02);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .top-button {
@@ -313,14 +319,14 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 .top-button:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -335,10 +341,18 @@ transform: scale(1.05);
 }
 
 @keyframes buttonHop {
-  0%   {transform: translateY(2px);}
-  25%  {transform: translateY(-4px);}
-  50%  {transform: translateY(2px);}
-  100% {transform: translateY(0);}
+  0% {
+    transform: translateY(2px);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Definice animace */
@@ -347,9 +361,9 @@ transform: scale(1.05);
     opacity: 0;
     transform: translateY(30px); /* Prvek začne o 30px níže */
   }
-  100%  {
+  100% {
     opacity: 1;
-    transform: translateY(0);    /* Skončí na své pozici */
+    transform: translateY(0); /* Skončí na své pozici */
   }
 }
 
@@ -364,6 +378,12 @@ transform: scale(1.05);
 }
 
 /* Přidáme zpoždění pro jednotlivé položky, aby se objevovaly postupně (stagger efekt) */
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}
