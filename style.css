@@ -336,6 +336,7 @@ nav a:hover {
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  z-index: 1000;
 }
 
 .top-button:hover {
@@ -434,11 +435,16 @@ nav a:hover {
   flex: 1 0 21%; /* explanation below */
 
   transition:
+  bagckground-color 0.3s ease-in-out,
     transform 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
 }
 
 .portfolio-item:hover {
+
+  transition: background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
   transform: scale(1.008);
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
 }
@@ -479,3 +485,82 @@ footer {
   box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.1);
   margin-top: 50px;
 }
+
+.contact-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: var(--background-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5); /* Jemný stín jako u nav */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form {
+  padding-top: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Barva z tvé navigace */
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover, .reset-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.reset-btn {
+    background-color: var(--text-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
