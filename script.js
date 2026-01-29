@@ -16,8 +16,7 @@ const observerCallback = (entries) => {
       if (sectionClass === "about" && portfolioSection) {
         setTimeout(() => {
           portfolioSection.classList.remove("portfolioUnloaded");
-        } , 1000);
-        
+        }, 1000);
       } else if (sectionClass !== "portfolio" && portfolioSection) {
         portfolioSection.classList.add("portfolioUnloaded");
       }
@@ -36,7 +35,7 @@ const observerCallback = (entries) => {
           aboutImg.classList.remove("aboutImgActive");
         }
       }
-      if (sectionClass === "portfolio") activeId = "portfolio-button"; 
+      if (sectionClass === "portfolio") activeId = "portfolio-button";
       if (sectionClass === "contact-section") activeId = "contact-button";
 
       if (activeId) {
@@ -105,7 +104,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
   // Spuštění pozorování sekcí pro Scroll Spy
   const sections = document.querySelectorAll(
-    ".hero-section, .about, .portfolio, .contact-section",
+    ".hero-section, .about, .portfolio, .contact-section, #portfolio_video, #portfolio_grafika, #portfolio_motion, #portfolio_foto",
   );
   sections.forEach((section) => observer.observe(section));
 
@@ -117,6 +116,24 @@ window.addEventListener("load", () => {
     contact: document.getElementById("contact-button"),
     top: document.querySelector(".top-button"),
   };
+
+  const portfolioLinks = document.querySelectorAll(".portfolio-link");
+
+  // Funkce pro přepínání aktivního stavu
+  portfolioLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // 1. Odstraníme třídu 'active' ze všech odkazů
+      portfolioLinks.forEach((item) => item.classList.remove("active"));
+
+      // 2. Přidáme třídu 'active' pouze na ten, na který se kliklo
+      link.classList.add("active");
+
+      // Zde můžeš přidat logiku pro zobrazení obsahu (např. filtrování obrázků)
+      console.log("Aktivní sekce:", link.id);
+    });
+  });
 
   btns.home?.addEventListener("click", (e) => {
     e.preventDefault();
