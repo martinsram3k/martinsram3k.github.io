@@ -1,41 +1,43 @@
 /**
- * 1. SCROLL SPY - Detekce viditelné sekce a automatické přepínání menu
+ * 1. SCROLL SPY - Detekce viditelné sekce pro hlavní menu
  */
 const observerOptions = {
   root: null,
-  threshold: 0.6, // Přepne menu, když je vidět 60 % sekce
+  threshold: 0.4, // Aktivuje se, když je vidět 40 % sekce
 };
 
 const observerCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Získáme třídu elementu, který je zrovna vidět
       const sectionClass = entry.target.classList[0];
+      const sectionId = entry.target.id;
+      
       const aboutImg = document.querySelector(".aboutImg");
-      const portfolioSection = document.querySelector(".portfolio");
-      if (sectionClass === "about" && portfolioSection) {
+      const portfolioParent = document.querySelector(".portfolio");
+
+      // Animace portfolia při prvním scrollu
+      if (sectionClass === "about" && portfolioParent) {
         setTimeout(() => {
-          portfolioSection.classList.remove("portfolioUnloaded");
+          portfolioParent.classList.remove("portfolioUnloaded");
         }, 1000);
-      } else if (sectionClass !== "portfolio" && portfolioSection) {
-        portfolioSection.classList.add("portfolioUnloaded");
       }
 
-      // Propojíme třídu sekce s ID tlačítka v navigaci
+      // Logika aktivního tlačítka v hlavní navigaci (home, about, portfolio, contact)
       let activeId = "";
       if (sectionClass === "hero-section") activeId = "home-button";
       if (sectionClass === "about") {
         activeId = "about-button";
-        if (aboutImg) {
-          aboutImg.classList.add("aboutImgActive");
-        }
+        if (aboutImg) aboutImg.classList.add("aboutImgActive");
       } else {
-        const aboutImg = document.querySelector(".aboutImg");
-        if (aboutImg) {
-          aboutImg.classList.remove("aboutImgActive");
-        }
+        if (aboutImg) aboutImg.classList.remove("aboutImgActive");
       }
-      if (sectionClass === "portfolio") activeId = "portfolio-button";
+      
+      // Pokud jsme v hlavní divu portfolio nebo v jakékoli podsekci (video, grafika...)
+      const subSections = ["video", "grafika", "motionGrafika", "foto"];
+      if (sectionClass === "portfolio" || subSections.includes(sectionId)) {
+        activeId = "portfolio-button";
+      }
+      
       if (sectionClass === "contact-section") activeId = "contact-button";
 
       if (activeId) {
@@ -50,8 +52,6 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 /**
  * 2. POMOCNÉ FUNKCE
  */
-
-// Funkce pro nastavení aktivní třídy v navigaci
 const setActiveLink = (activeButtonId) => {
   const navLinks = document.querySelectorAll(".komet");
   navLinks.forEach((link) => {
@@ -59,7 +59,6 @@ const setActiveLink = (activeButtonId) => {
   });
 };
 
-// Funkce pro plynulý scroll na sekci s odsazením kvůli fixní navigaci
 const scrollToElement = (selector) => {
   const element = document.querySelector(selector);
   if (element) {
@@ -67,28 +66,20 @@ const scrollToElement = (selector) => {
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   }
 };
 
 /**
- * 3. UDÁLOSTI PŘI SCROLLU (Stín navigace a Top Button)
+ * 3. SCROLL & STICKY NAV
  */
 window.addEventListener("scroll", () => {
   const nav = document.querySelector("nav");
   const topBtn = document.querySelector(".top-button");
 
-  // Stín navigace
-  if (window.scrollY > 10) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
+  if (window.scrollY > 10) nav.classList.add("scrolled");
+  else nav.classList.remove("scrolled");
 
-  // Tlačítko nahoru (fade efekt)
   if (window.scrollY > 100) {
     topBtn.style.opacity = "1";
     topBtn.style.pointerEvents = "auto";
@@ -99,83 +90,77 @@ window.addEventListener("scroll", () => {
 });
 
 /**
- * 4. OBSLUHA KLIKNUTÍ A INICIALIZACE PO NAČTENÍ
+ * 4. INICIALIZACE A KLIKNUTÍ
  */
 window.addEventListener("load", () => {
-  // Spuštění pozorování sekcí pro Scroll Spy
-  const sections = document.querySelectorAll(
-    ".hero-section, .about, .portfolio, .contact-section, #portfolio_video, #portfolio_grafika, #portfolio_motion, #portfolio_foto",
+  // Sledování sekcí pro Scroll Spy
+  const sectionsToObserve = document.querySelectorAll(
+    ".hero-section, .about, .portfolio, .contact-section, #video, #grafika, #motionGrafika, #foto"
   );
-  sections.forEach((section) => observer.observe(section));
+  sectionsToObserve.forEach((section) => observer.observe(section));
 
-  // Definice tlačítek pro kliknutí
-  const btns = {
-    home: document.getElementById("home-button"),
-    about: document.getElementById("about-button"),
-    portfolio: document.getElementById("portfolio-button"),
-    contact: document.getElementById("contact-button"),
-    top: document.querySelector(".top-button"),
-  };
-
+  // --- LOGIKA PŘEPÍNÁNÍ PORTFOLIA ---
   const portfolioLinks = document.querySelectorAll(".portfolio-link");
+  const portfolioContentSections = document.querySelectorAll("#video, #grafika, #motionGrafika, #foto");
 
-  // Funkce pro přepínání aktivního stavu
   portfolioLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // 1. Odstraníme třídu 'active' ze všech odkazů
-      portfolioLinks.forEach((item) => item.classList.remove("active"));
-
-      // 2. Přidáme třídu 'active' pouze na ten, na který se kliklo
+      // Aktivní vzhled odkazu v portfoliu
+      portfolioLinks.forEach((l) => l.classList.remove("active"));
       link.classList.add("active");
 
-      // Zde můžeš přidat logiku pro zobrazení obsahu (např. filtrování obrázků)
-      console.log("Aktivní sekce:", link.id);
+      // Cílové ID z hrefu (např. #motionGradika)
+      const targetId = link.getAttribute("href").substring(1);
+
+      // Přepnutí viditelnosti tabulek
+      portfolioContentSections.forEach((sec) => {
+        if (sec.id === targetId) {
+          sec.style.display = "block"; // Zobrazíme sekci
+        } else {
+          sec.style.display = "none";  // Schováme ostatní
+        }
+      });
+      
+      console.log("Přepnuto na portfolio sekci:", targetId);
     });
   });
 
-  btns.home?.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  // --- HLAVNÍ NAVIGACE (Home, About, Portfolio, Contact) ---
+  const mainNavButtons = {
+    "home-button": () => window.scrollTo({ top: 0, behavior: "smooth" }),
+    "about-button": () => scrollToElement(".about"),
+    "portfolio-button": () => {
+        scrollToElement(".portfolio");
+        document.querySelector(".portfolio")?.classList.remove("portfolioUnloaded");
+    },
+    "contact-button": () => scrollToElement(".contact-section")
+  };
+
+  Object.keys(mainNavButtons).forEach(id => {
+    document.getElementById(id)?.addEventListener("click", (e) => {
+        e.preventDefault();
+        mainNavButtons[id]();
+    });
   });
 
-  btns.about?.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToElement(".about");
-  });
-
-  btns.portfolio?.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToElement(".portfolio");
-    portfolioSection.classList.remove("portfolioUnloaded");
-  });
-
-  btns.contact?.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToElement(".contact-section");
-  });
-
-  btns.top?.addEventListener("click", () => {
+  document.querySelector(".top-button")?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 
 /**
- * 5. INTRO SHOW-UP ANIMACE
+ * 5. ÚVODNÍ ANIMACE (Opacity)
  */
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector("nav");
-  const hero = document.querySelector(".hero-section");
-  const about = document.querySelector(".about");
-
-  if (navbar) navbar.style.opacity = "1";
-
-  setTimeout(() => {
-    if (hero) hero.style.opacity = "1";
-  }, 400);
-
-  setTimeout(() => {
-    if (about) about.style.opacity = "1";
-  }, 800);
+  const introElements = ["nav", ".hero-section", ".about"];
+  introElements.forEach((selector, index) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      setTimeout(() => {
+        el.style.opacity = "1";
+      }, index * 400);
+    }
+  });
 });

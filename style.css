@@ -442,6 +442,14 @@ nav a:hover {
   letter-spacing: 5px;
 }
 
+.portfolio-table a {
+  text-decoration: none;
+}
+
+.portfolio-table a {
+  border-bottom: 0px solid transparent;
+}
+
 .portfolio-link:hover {
   color: var(--primary-color);
   transition: color 0.3s ease-in-out;
@@ -454,46 +462,49 @@ nav a:hover {
   transition: color 0.3s ease-in-out;
 }
 
+/* Styl pro celou tabulku */
+.portfolio-table {
+  width: 100%;
+  border-collapse: separate; /* Aby fungoval border-radius a spacing */
+  border-spacing: 20px; /* Nahrazuje 'gap' u flexboxu */
+  table-layout: fixed; /* Zajistí, že sloupce budou stejně široké */
+  margin-bottom: 40px;
+}
+
 .portfolio-item {
-  margin-bottom: 30px;
-  margin-right: 30px;
-  height: fit-content;
+  /* Odebrán flexbox, tabulka se o zbytek postará */
+  vertical-align: top; /* Zarovnání obsahu buněk nahoru */
   background-color: var(--background-color-darker);
   border-radius: 20px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  text-align: left;
   padding: 20px;
-  flex: 0 0 calc(33% - 50px);
-  box-sizing: border-box;
-
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+  text-align: left;
+  
+  /* Animace zůstávají */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Hover efekt musí být na TD (buňce) */
 .portfolio-item:hover {
-  transition:
-    background-color 0.3s ease-in-out,
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
   transform: scale(1.008);
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
+/* Obrázky a videa uvnitř tabulky */
+.portfolio-item img, 
 .portfolio-item video {
   width: 100%;
   height: auto;
   border-radius: 15px;
+  display: block; /* Odstraní mezeru pod obrázkem */
+}
+
+.portfolio-item h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
 }
 
 .portfolio-item h3 {
