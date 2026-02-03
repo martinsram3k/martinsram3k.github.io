@@ -167,8 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let currentImage = 1;
 const maxImages = 6;
-const imgElement = document.getElementById('carusel1');
+ const imgElement = document.getElementById('carusel1');
 const imgElement2 = document.getElementById('carusel2');
+const imgElement3 = document.getElementById('carusel3');
+const imgElement4 = document.getElementById('carusel4');
+const imgElement5 = document.getElementById('carusel5');
+const imgElement6 = document.getElementById('carusel6');
 
 function rotateImage() {;
     // 2. Krok: Počkáme 500ms (délka animace v CSS), než změníme zdroj
@@ -181,6 +185,10 @@ function rotateImage() {;
         // Změna cesty k obrázku
         imgElement.src = `img/disoa/${currentImage}.jpg`;
         imgElement2.src = `img/wafk/${currentImage}.jpg`;
+        imgElement3.src = `img/beauty/${currentImage}.jpg`;
+        imgElement4.src = `img//${currentImage}.jpg`;
+        imgElement5.src = `img//${currentImage}.jpg`;
+        imgElement6.src = `img//${currentImage}.jpg`;
 
 
     }, 500); 
