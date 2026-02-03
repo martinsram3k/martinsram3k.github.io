@@ -164,3 +164,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+let currentImage = 1;
+const maxImages = 6;
+const imgElement = document.getElementById('carusel1');
+const imgElement2 = document.getElementById('carusel2');
+
+function rotateImage() {;
+    // 2. Krok: Počkáme 500ms (délka animace v CSS), než změníme zdroj
+    setTimeout(() => {
+        currentImage++;
+        if (currentImage > maxImages) {
+            currentImage = 1;
+        }
+
+        // Změna cesty k obrázku
+        imgElement.src = `img/disoa/${currentImage}.jpg`;
+        imgElement2.src = `img/wafk/${currentImage}.jpg`;
+
+
+    }, 500); 
+}
+
+// Spouštíme každé 4 sekundy (aby byl čas na animaci i prohlédnutí fotky)
+setInterval(rotateImage, 4000);
