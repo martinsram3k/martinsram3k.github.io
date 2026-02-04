@@ -492,7 +492,8 @@ nav a:hover {
 
 /* Obrázky a videa uvnitř tabulky */
 .portfolio-item img, 
-.portfolio-item video {
+.portfolio-item video,
+.portfolio-item iframe {
   width: 100%;
   height: auto;
   border-radius: 15px;

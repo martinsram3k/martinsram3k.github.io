@@ -186,7 +186,7 @@ function rotateImage() {;
         imgElement.src = `img/disoa/${currentImage}.jpg`;
         imgElement2.src = `img/wafk/${currentImage}.jpg`;
         imgElement3.src = `img/beauty/${currentImage}.jpg`;
-        imgElement4.src = `img//${currentImage}.jpg`;
+        imgElement4.src = `img/hankwoody/${currentImage}.jpg`;
         imgElement5.src = `img//${currentImage}.jpg`;
         imgElement6.src = `img//${currentImage}.jpg`;
 
