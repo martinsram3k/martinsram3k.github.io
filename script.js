@@ -188,7 +188,7 @@ function rotateImage() {;
         imgElement3.src = `img/beauty/${currentImage}.jpg`;
         imgElement4.src = `img/hankwoody/${currentImage}.jpg`;
         imgElement5.src = `img//${currentImage}.jpg`;
-        imgElement6.src = `img//${currentImage}.jpg`;
+        imgElement6.src = `img/volno-cas/${currentImage}.jpg`;
 
 
     }, 500); 
