@@ -149,7 +149,7 @@ nav a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-#language-switcher {
+.language-switcher {
   margin-right: 20px;
 }
 
@@ -618,6 +618,21 @@ textarea {
    Breakpoint 480px = malé telefony
    ============================================================ */
 
+@media (max-width: 1024px) {
+  /* Na tabletu zmírníme velikost a zrušíme fixní line-height, který by text rozbil */
+  .bgText {
+    position: relative;
+    top: auto;
+    font-size: 6rem;
+    letter-spacing: 20px;
+    line-height: normal;
+  }
+  
+  .bgText h3.gunter {
+    font-size: 8rem !important;
+  }
+}
+
 @media (max-width: 768px) {
 
   /* --- NAVIGACE ---
@@ -655,7 +670,7 @@ textarea {
     font-size: 0.85rem;
   }
 
-  #language-switcher {
+  .language-switcher {
     margin-right: 10px;
     font-size: 0.85rem;
   }
