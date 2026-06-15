@@ -611,3 +611,245 @@ textarea {
   transition: all 0.3s ease;
   margin-left: 15px;
 }
+
+/* ============================================================
+   RESPONZIVNÍ STYLY PRO MOBILNÍ ZAŘÍZENÍ
+   Breakpoint 768px = tablet a menší
+   Breakpoint 480px = malé telefony
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* --- NAVIGACE ---
+     Na mobilu skryjeme prostřední menu a přeskládáme na 2 řádky */
+  .nav-container {
+    flex-wrap: wrap;       /* Dovolí zalomení na nový řádek */
+    padding: 8px 0;
+  }
+
+  /* Logo zabere celou šíři, kontakt jde na stejný řádek */
+  .nav-logo {
+    flex: 1;
+    margin-left: 15px;    /* Menší odsazení na mobilu */
+  }
+
+  .nav-logo h1 {
+    font-size: 1.1rem;    /* Menší název */
+    margin: 5px 0;
+  }
+
+  /* Prostřední menu schováme – na malé obrazovce by se nevešlo */
+  .nav-links {
+    display: none;
+  }
+
+  /* Kontakt (CZ/EN + tlačítko) zůstane vpravo */
+  .nav-contact {
+    flex: 1;
+    margin-right: 15px;
+    justify-content: flex-end;
+  }
+
+  .kontakt {
+    padding: 8px 14px;    /* Menší tlačítko kontakt */
+    font-size: 0.85rem;
+  }
+
+  #language-switcher {
+    margin-right: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* --- HERO SEKCE ---
+     Obrovský bgText by přetekl přes celou obrazovku */
+  .hero-section {
+    height: auto;
+    min-height: 300px;
+    padding-top: 60px;    /* Nav má fixní výšku ~50px, trochu prostoru navíc */
+    padding-bottom: 20px;
+  }
+
+  .hero-section h2 {
+    font-size: 1.2rem;    /* Menší pozdrav */
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* Velký text na pozadí – zmenšíme drasticky */
+  .bgText {
+    position: relative;   /* Vyjmeme z absolutní pozice, ať netlačí obsah */
+    top: auto;
+    font-size: 3rem;      /* Z 10rem na 3rem */
+    letter-spacing: 10px; /* Z 50px na 10px */
+    line-height: normal;
+  }
+
+  .bgText h3.gunter {
+    font-size: 4rem !important; /* Byl 16rem – na mobilu nereálné */
+  }
+
+  /* Obrázek v hero sekci skryjeme nebo zmenšíme */
+  .hero-section img {
+    width: 90%;           /* Místo fixních 700px */
+    position: relative;   /* Vyjmeme z absolute, ať netlačí přes text */
+    bottom: auto;
+    margin-top: 10px;
+  }
+
+  /* --- ABOUT SEKCE ---
+     Tři sloupce vedle sebe → jeden pod druhým */
+  .about {
+    flex-direction: column;  /* Sloupce pod sebe */
+    align-items: center;
+    margin-left: 20px;       /* Menší okraje */
+    margin-right: 20px;
+    width: auto;
+    min-width: unset;
+  }
+
+  .colum1,
+  .colum2,
+  .colum3 {
+    width: 100%;             /* Každý sloupec zabere plnou šíři */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* Fotka v about – zarovnáme a zrušíme otočení */
+  .colum1 .aboutImg {
+    width: 100%;
+    transform: rotate(0deg); /* Na mobilu rotace působí divně */
+  }
+
+  /* --- PORTFOLIO ---
+     Tabulka se třemi sloupci je na mobilu nepoužitelná */
+  .portfolio {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  /* Menu kategorií portfolia – zmenšíme mezery a font */
+  .portfolio ul {
+    gap: 20px;             /* Z 100px na 20px */
+    flex-wrap: wrap;       /* Zalomí, pokud se nevejde */
+    margin-bottom: 15px;
+  }
+
+  .portfolio-link {
+    font-size: 1.1rem;     /* Z 2rem na 1.1rem */
+    letter-spacing: 2px;  /* Z 5px na 2px */
+  }
+
+  /* Tenčí obrys u "& VIDEO EDITOR" – 5px je na tabletu také dost výrazné */
+  .outline-text {
+    -webkit-text-stroke: 2.5px var(--text-color);
+  }
+
+  /* Klíčová změna: tabulka → blokové zobrazení
+     Každá <tr> a <td> se zachová jako blok = sloupce pod sebou */
+  .portfolio-table {
+    display: block;        /* Tabulka se chová jako div */
+    border-spacing: 0;
+  }
+
+  .portfolio-table tr {
+    display: block;        /* Řádky jako bloky */
+  }
+
+  .portfolio-table td.portfolio-item {
+    display: block;        /* Buňky jako bloky = každý projekt na vlastním řádku */
+    width: 100%;           /* Plná šíře */
+    margin-bottom: 15px;   /* Mezera mezi projekty */
+    box-sizing: border-box;
+  }
+
+  /* Portfolio sekce (video, grafika...) */
+  .portfolio-table a {
+    display: block;        /* Aby odkaz zabral celou šíři jako buňka */
+  }
+
+  /* --- KONTAKTNÍ FORMULÁŘ --- */
+  .contact-section {
+    padding: 10px;
+  }
+
+  .contact-form {
+    padding: 20px;         /* Z 40px na 20px */
+  }
+
+  .submit-btn,
+  .reset-btn {
+    width: 100%;           /* Tlačítka na plnou šíři */
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    height: auto;
+    padding: 15px;
+    text-align: center;
+  }
+
+  footer p {
+    position: static !important; /* Zrušíme absolute right:50px */
+    right: auto !important;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  /* --- TLAČÍTKO ZPĚT NAHORU --- */
+  .top-button {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .top-button span {
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+/* ============================================================
+   Extra malé telefony (< 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .nav-logo h1 {
+    font-size: 0.95rem;
+  }
+
+  .bgText h3.gunter {
+    font-size: 3rem !important;
+  }
+
+  .bgText {
+    font-size: 2.2rem;
+    letter-spacing: 5px;
+  }
+
+  .hero-section h2 {
+    font-size: 1rem;
+  }
+
+  /* Ještě menší nadpis O mně sekce */
+  .about .colum2 h3,
+  .about .colum3 h3 {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-link {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  /* Tenčí obrys u "& VIDEO EDITOR" textu – 5px je na mobilu moc tlusté */
+  .outline-text {
+    -webkit-text-stroke: 1.5px var(--text-color);
+  }
+}
