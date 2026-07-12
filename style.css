@@ -620,19 +620,10 @@ textarea {
 }
 
 .billing-card {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  background: var(--background-color);
   padding: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.billing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .billing-header {
