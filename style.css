@@ -534,16 +534,28 @@ footer {
 }
 
 .contact-section {
-  padding: 20px;
-  max-width: 800px;
+  padding: 40px 20px 80px 20px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+.contact-billing-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .contact-form {
+  flex: 1;
+  min-width: 320px;
+  box-sizing: border-box;
   background: var(--background-color);
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5); /* Jemný stín jako u nav */
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .form-group {
@@ -620,6 +632,9 @@ textarea {
 }
 
 .billing-card {
+  flex: 1;
+  min-width: 320px;
+  box-sizing: border-box;
   background: var(--background-color);
   padding: 40px;
   border-radius: 10px;
