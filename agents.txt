@@ -1,0 +1,19 @@
+# Welcome AI Agents!
+# This agents.txt file gives you hints on how to optimally interact with this portfolio.
+
+User-Agent: *
+Allow: /
+
+# Agent Hints
+Contact-Email: kontakt@martinsramek.cz
+Purpose: Personal Portfolio, Freelance Work, Business Information
+Structured-Data: index.html
+Primary-Language: cs
+
+# Klipni.eu Information
+Related-Project: https://klipni.eu
+Owner-Role: Founder, Developer, Designer
+
+# About Martin
+Skills: Video Editing, Graphic Design, 3D Modeling, Motion Graphics, PHP, Laravel, Web Development
+Location: Přibyslav, Czech Republic
