@@ -196,3 +196,20 @@ function rotateImage() {;
 
 // Spouštíme každé 4 sekundy (aby byl čas na animaci i prohlédnutí fotky)
 setInterval(rotateImage, 4000);
+
+/**
+ * 6. OBECNÉ ANIMACE PŘI SCROLLOVÁNÍ
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const animationObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll(".animate-on-scroll").forEach(el => {
+    animationObserver.observe(el);
+  });
+});

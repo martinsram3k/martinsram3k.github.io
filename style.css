@@ -494,6 +494,7 @@ nav a:hover {
 .portfolio-item img, 
 .portfolio-item video,
 .portfolio-item iframe {
+  transition: transform 0.5s ease;
   width: 100%;
   height: auto;
   border-radius: 15px;
@@ -605,11 +606,7 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.submit-btn:hover,
-.reset-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+.submit-btn:hover, .reset-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); }
 
 .reset-btn {
   background-color: var(--text-color);
@@ -970,3 +967,19 @@ textarea {
     -webkit-text-stroke: 1.5px var(--text-color);
   }
 }
+
+/* --- INTERAKTIVNÍ ANIMACE PŘI SCROLLOVÁNÍ --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: opacity, transform;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-delay-1 { transition-delay: 150ms; }
+.animate-delay-2 { transition-delay: 300ms; }
+
+.portfolio-item:hover img, .portfolio-item:hover video { transform: scale(1.03); }
