@@ -151,9 +151,10 @@ window.addEventListener("load", () => {
 });
 
 /**
- * 5. ÚVODNÍ ANIMACE (Opacity)
+ * 5. ÚVODNÍ ANIMACE A INICIALIZACE NOVÝCH PRVKŮ
  */
 document.addEventListener("DOMContentLoaded", () => {
+  // Animace načtení
   const introElements = ["nav", ".hero-section", ".about"];
   introElements.forEach((selector, index) => {
     const el = document.querySelector(selector);
@@ -163,53 +164,189 @@ document.addEventListener("DOMContentLoaded", () => {
       }, index * 400);
     }
   });
+
+  // Inicializace nových interaktivních prvků
+  initThemeToggle();
+  initTiltEffect();
+  initScrollParallax();
 });
 
+/**
+ * 6. ROTACE OBRÁZKŮ (CAROUSEL) S DEFENSIVNÍ KONTROLOU (OPRAVA CHYBY)
+ */
 let currentImage = 1;
 const maxImages = 6;
- const imgElement = document.getElementById('carusel1');
+
+const imgElement = document.getElementById('carusel1');
 const imgElement2 = document.getElementById('carusel2');
 const imgElement3 = document.getElementById('carusel3');
 const imgElement4 = document.getElementById('carusel4');
 const imgElement5 = document.getElementById('carusel5');
 const imgElement6 = document.getElementById('carusel6');
 
-function rotateImage() {;
-    // 2. Krok: Počkáme 500ms (délka animace v CSS), než změníme zdroj
-    setTimeout(() => {
-        currentImage++;
-        if (currentImage > maxImages) {
-            currentImage = 1;
-        }
+function rotateImage() {
+  const imagesToRotate = [
+    { element: imgElement, prefix: 'disoa' },
+    { element: imgElement2, prefix: 'wafk' },
+    { element: imgElement3, prefix: 'beauty' },
+    { element: imgElement4, prefix: 'hankwoody' },
+    { element: imgElement5, prefix: 'disoa' },
+    { element: imgElement6, prefix: 'volnocas' }
+  ];
 
-        // Změna cesty k obrázku
-        imgElement.src = `img/disoa/${currentImage}.jpg`;
-        imgElement2.src = `img/wafk/${currentImage}.jpg`;
-        imgElement3.src = `img/beauty/${currentImage}.jpg`;
-        imgElement4.src = `img/hankwoody/${currentImage}.jpg`;
-        imgElement5.src = `img//${currentImage}.jpg`;
-        imgElement6.src = `img/volno-cas/${currentImage}.jpg`;
+  // 1. Plynulé ztlumení opacity na 0 (trvá 300ms podle CSS transition)
+  imagesToRotate.forEach(item => {
+    if (item.element) {
+      item.element.style.opacity = '0';
+    }
+  });
 
+  // 2. Změna src a plynulý fade-in po dokončení ztlumení (300ms)
+  setTimeout(() => {
+    currentImage++;
+    if (currentImage > maxImages) {
+      currentImage = 1;
+    }
 
-    }, 500); 
+    imagesToRotate.forEach(item => {
+      if (item.element) {
+        item.element.src = `${item.prefix}${currentImage}.jpg`;
+        
+        // Plynulý návrat opacity na 1 po načtení nového obrázku
+        item.element.onload = () => {
+          item.element.style.opacity = '1';
+        };
+
+        // Pojistka pro případ, že je obrázek v mezipaměti a onload se nespustí
+        setTimeout(() => {
+          item.element.style.opacity = '1';
+        }, 50);
+      }
+    });
+  }, 300);
 }
 
-// Spouštíme každé 4 sekundy (aby byl čas na animaci i prohlédnutí fotky)
+// Spuštění koloběhu obrázků
 setInterval(rotateImage, 4000);
 
 /**
- * 6. OBECNÉ ANIMACE PŘI SCROLLOVÁNÍ
+ * 7. OBECNÉ ANIMACE PŘI SCROLLOVÁNÍ
  */
-document.addEventListener("DOMContentLoaded", () => {
-  const animationObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-  document.querySelectorAll(".animate-on-scroll").forEach(el => {
-    animationObserver.observe(el);
+const animationObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+    }
   });
+}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+document.querySelectorAll(".animate-on-scroll").forEach(el => {
+  animationObserver.observe(el);
 });
+
+/**
+ * 8. DETEKCE A PŘEPÍNÁNÍ SVĚTLÉHO/TMAVÉHO REŽIMU
+ */
+function initThemeToggle() {
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+  if (!themeToggle) return;
+
+  const savedTheme = localStorage.getItem("theme");
+  // Výchozí motiv je nyní světlý (white)
+  const isDark = savedTheme === "dark";
+
+  const setDarkTheme = () => {
+    document.documentElement.classList.add("dark-mode");
+    document.documentElement.classList.remove("light-mode");
+    if (themeIcon) themeIcon.textContent = "light_mode";
+  };
+
+  const setLightTheme = () => {
+    document.documentElement.classList.add("light-mode");
+    document.documentElement.classList.remove("dark-mode");
+    if (themeIcon) themeIcon.textContent = "dark_mode";
+  };
+
+  if (isDark) setDarkTheme();
+  else setLightTheme();
+
+  themeToggle.addEventListener("click", () => {
+    const isNowDark = document.documentElement.classList.contains("dark-mode");
+    if (isNowDark) {
+      setLightTheme();
+      localStorage.setItem("theme", "light");
+    } else {
+      setDarkTheme();
+      localStorage.setItem("theme", "dark");
+    }
+  });
+}
+
+
+
+/**
+ * 10. INTERAKTIVNÍ PARALAXNÍ EFEKT TEXTU V HERO SEKCI
+ */
+function initScrollParallax() {
+  const bgText = document.querySelector(".bgText");
+  if (!bgText) return;
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    if (scrollY < 800) {
+      bgText.style.transform = `translateY(${scrollY * 0.4}px)`;
+    }
+  });
+}
+
+/**
+ * 11. INTERAKTIVNÍ 3D TILT EFEKT PRO KARTY A PORTRAIT
+ */
+function initTiltEffect() {
+  const tiltElements = document.querySelectorAll(".portfolio-item, .aboutImg, .contact-form, .billing-card");
+
+  tiltElements.forEach(el => {
+    el.addEventListener("mousemove", (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const width = rect.width;
+      const height = rect.height;
+
+      const rotateX = ((y / height) - 0.5) * -5; // jemný náklon do 5 stupňů
+      const rotateY = ((x / width) - 0.5) * 5;
+
+      el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
+
+      // Vrstvený 3D efekt na vnitřní prvky
+      const media = el.querySelector("img, video, iframe");
+      const title = el.querySelector("h3");
+      const desc = el.querySelector("p");
+
+      if (media) media.style.transform = `translateZ(25px) scale(1.02)`;
+      if (title) title.style.transform = `translateZ(40px)`;
+      if (desc) desc.style.transform = `translateZ(18px)`;
+    });
+
+    el.style.transition = "transform 0.15s ease-out"; // Rychlejší odezva při pohybu
+
+    el.addEventListener("mouseleave", () => {
+      el.style.transition = "transform 0.5s ease-out"; // Hladký návrat
+      el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+
+      const media = el.querySelector("img, video, iframe");
+      const title = el.querySelector("h3");
+      const desc = el.querySelector("p");
+
+      if (media) {
+        media.style.transition = "transform 0.5s ease-out";
+        media.style.transform = `translateZ(0px) scale(1)`;
+      }
+      if (title) title.style.transform = `translateZ(0px)`;
+      if (desc) desc.style.transform = `translateZ(0px)`;
+    });
+  });
+}
+
+
