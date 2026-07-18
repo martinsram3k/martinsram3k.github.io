@@ -513,8 +513,16 @@ nav a:hover {
   transition: transform 0.5s ease, opacity 0.3s ease;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 15px;
   display: block; /* Odstraní mezeru pod obrázkem */
+  border: none;
+}
+
+#grafika .portfolio-item img {
+  object-fit: contain;
+  background-color: var(--background-color-darker);
 }
 
 .portfolio-item h3 {
@@ -531,9 +539,39 @@ nav a:hover {
   font-size: 1rem;
 }
 
-p a {
+.portfolio-item p a {
   color: var(--primary-color);
   font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.portfolio-item p a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.portfolio-more-link {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
+
+.portfolio-more-link p {
+  color: var(--text-color-muted);
+}
+
+.portfolio-more-link a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-more-link a:hover {
+  border-color: var(--primary-color);
 }
 
 footer {

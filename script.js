@@ -73,19 +73,23 @@ const scrollToElement = (selector) => {
 /**
  * 3. SCROLL & STICKY NAV
  */
+const scrollNav = document.querySelector("nav");
+const scrollTopBtn = document.querySelector(".top-button");
+
 window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
-  const topBtn = document.querySelector(".top-button");
+  if (scrollNav) {
+    if (window.scrollY > 10) scrollNav.classList.add("scrolled");
+    else scrollNav.classList.remove("scrolled");
+  }
 
-  if (window.scrollY > 10) nav.classList.add("scrolled");
-  else nav.classList.remove("scrolled");
-
-  if (window.scrollY > 100) {
-    topBtn.style.opacity = "1";
-    topBtn.style.pointerEvents = "auto";
-  } else {
-    topBtn.style.opacity = "0";
-    topBtn.style.pointerEvents = "none";
+  if (scrollTopBtn) {
+    if (window.scrollY > 100) {
+      scrollTopBtn.style.opacity = "1";
+      scrollTopBtn.style.pointerEvents = "auto";
+    } else {
+      scrollTopBtn.style.opacity = "0";
+      scrollTopBtn.style.pointerEvents = "none";
+    }
   }
 });
 
@@ -190,7 +194,7 @@ function rotateImage() {
     { element: imgElement2, prefix: 'wafk' },
     { element: imgElement3, prefix: 'beauty' },
     { element: imgElement4, prefix: 'hankwoody' },
-    { element: imgElement5, prefix: 'disoa' },
+    { element: imgElement5, prefix: 'relax_zen' },
     { element: imgElement6, prefix: 'volnocas' }
   ];
 
@@ -307,8 +311,17 @@ function initTiltEffect() {
   const tiltElements = document.querySelectorAll(".portfolio-item, .aboutImg, .contact-form, .billing-card");
 
   tiltElements.forEach(el => {
+    let rect = null;
+
+    // Načteme rozměry pouze při najetí myši (ne při každém pohybu)
+    el.addEventListener("mouseenter", () => {
+      rect = el.getBoundingClientRect();
+    });
+
     el.addEventListener("mousemove", (e) => {
-      const rect = el.getBoundingClientRect();
+      if (!rect) {
+        rect = el.getBoundingClientRect();
+      }
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       const width = rect.width;
@@ -332,6 +345,7 @@ function initTiltEffect() {
     el.style.transition = "transform 0.15s ease-out"; // Rychlejší odezva při pohybu
 
     el.addEventListener("mouseleave", () => {
+      rect = null; // Resetujeme rect
       el.style.transition = "transform 0.5s ease-out"; // Hladký návrat
       el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
 
