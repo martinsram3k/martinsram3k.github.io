@@ -593,7 +593,7 @@ nav a:hover {
   border: none;
 }
 
-#grafika .portfolio-item img {
+.portfolio-item[data-category="grafika"] img {
   object-fit: contain;
   background-color: var(--background-color-darker);
 }
