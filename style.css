@@ -478,32 +478,105 @@ nav a:hover {
   transition: color 0.3s ease-in-out;
 }
 
-/* Styl pro celou tabulku */
-.portfolio-table {
-  width: 100%;
-  border-collapse: separate; /* Aby fungoval border-radius a spacing */
-  border-spacing: 20px; /* Nahrazuje 'gap' u flexboxu */
-  table-layout: fixed; /* Zajistí, že sloupce budou stejně široké */
+/* Mřížka pro portfolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .portfolio-item {
-  vertical-align: top;
+  position: relative;
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   box-shadow: var(--shadow);
   padding: 20px;
   text-align: left;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease, background-color 0.3s ease, opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), scale 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
-  will-change: transform;
+  will-change: transform, opacity, scale;
+  opacity: 1;
+  scale: 1;
 }
 
-/* Hover efekt musí být na TD (buňce) */
+/* Třídy pro plynulé filtrování */
+.portfolio-item.faded-out {
+  opacity: 0 !important;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(0.85, 0.85, 0.85) !important;
+  pointer-events: none;
+  box-shadow: none !important;
+}
+
+.portfolio-item.hidden-item {
+  display: none !important;
+}
+
+/* Hover efekt */
 .portfolio-item:hover {
   transform: scale(1.008);
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Štítky kategorií */
+.category-badge {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: var(--gradient);
+  color: #ffffff;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 20px;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* CTA karta ke spolupráci */
+.portfolio-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 0, 80, 0.04), rgba(255, 0, 0, 0.04));
+  border: 2px dashed var(--primary-color) !important;
+  text-align: center;
+  min-height: 250px;
+}
+
+.portfolio-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transform: translateZ(20px);
+}
+
+.cta-icon {
+  font-size: 3rem !important;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--gradient);
+  color: #ffffff !important;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 0, 80, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 0, 80, 0.4);
 }
 
 /* Obrázky a videa uvnitř tabulky */
@@ -925,27 +998,10 @@ textarea {
     -webkit-text-stroke: 2.5px var(--text-color);
   }
 
-  /* Klíčová změna: tabulka → blokové zobrazení
-     Každá <tr> a <td> se zachová jako blok = sloupce pod sebou */
-  .portfolio-table {
-    display: block;        /* Tabulka se chová jako div */
-    border-spacing: 0;
-  }
-
-  .portfolio-table tr {
-    display: block;        /* Řádky jako bloky */
-  }
-
-  .portfolio-table td.portfolio-item {
-    display: block;        /* Buňky jako bloky = každý projekt na vlastním řádku */
-    width: 100%;           /* Plná šíře */
-    margin-bottom: 15px;   /* Mezera mezi projekty */
-    box-sizing: border-box;
-  }
-
-  /* Portfolio sekce (video, grafika...) */
-  .portfolio-table a {
-    display: block;        /* Aby odkaz zabral celou šíři jako buňka */
+  /* Klíčová změna: portfolio-grid na mobilu má jeden sloupec pod sebou */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   /* --- KONTAKTNÍ FORMULÁŘ --- */

@@ -99,13 +99,13 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
   // Sledování sekcí pro Scroll Spy
   const sectionsToObserve = document.querySelectorAll(
-    ".hero-section, .about, .portfolio, .contact-section, #video, #grafika, #motionGrafika, #foto"
+    ".hero-section, .about, .portfolio, .contact-section"
   );
   sectionsToObserve.forEach((section) => observer.observe(section));
 
-  // --- LOGIKA PŘEPÍNÁNÍ PORTFOLIA ---
+  // --- LOGIKA PŘEPÍNÁNÍ PORTFOLIA (FILTROVÁNÍ) ---
   const portfolioLinks = document.querySelectorAll(".portfolio-link");
-  const portfolioContentSections = document.querySelectorAll("#video, #grafika, #motionGrafika, #foto");
+  const portfolioItems = document.querySelectorAll(".portfolio-grid .portfolio-item");
 
   portfolioLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -115,19 +115,35 @@ window.addEventListener("load", () => {
       portfolioLinks.forEach((l) => l.classList.remove("active"));
       link.classList.add("active");
 
-      // Cílové ID z hrefu (např. #motionGradika)
-      const targetId = link.getAttribute("href").substring(1);
+      // Cílová kategorie z hrefu
+      const targetCategory = link.getAttribute("href").substring(1);
 
-      // Přepnutí viditelnosti tabulek
-      portfolioContentSections.forEach((sec) => {
-        if (sec.id === targetId) {
-          sec.style.display = "block"; // Zobrazíme sekci
+      portfolioItems.forEach((item) => {
+        const itemCategory = item.getAttribute("data-category");
+
+        // CTA karta se zobrazuje vždy
+        const shouldShow = (targetCategory === "vse" || itemCategory === targetCategory || itemCategory === "cta");
+
+        if (shouldShow) {
+          // Zobrazit: nejprve odebereme display: none class
+          item.classList.remove("hidden-item");
+          // Poté s malým zpožděním spustíme fade-in a scale
+          setTimeout(() => {
+            item.classList.remove("faded-out");
+          }, 20);
         } else {
-          sec.style.display = "none";  // Schováme ostatní
+          // Skrýt: nejprve spustíme fade-out
+          item.classList.add("faded-out");
+          // Po dokončení transition (350ms) úplně schováme z layoutu
+          setTimeout(() => {
+            if (item.classList.contains("faded-out")) {
+              item.classList.add("hidden-item");
+            }
+          }, 350);
         }
       });
       
-      console.log("Přepnuto na portfolio sekci:", targetId);
+      console.log("Přepnuto na portfolio kategorii:", targetCategory);
     });
   });
 
