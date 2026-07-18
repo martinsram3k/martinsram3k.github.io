@@ -214,20 +214,25 @@ function rotateImage() {
     { element: imgElement6, prefix: 'volnocas' }
   ];
 
-  // 1. Plynulé ztlumení opacity na 0 (trvá 300ms podle CSS transition)
+  // 1. Nastavíme background-image obalového wrapperu na současný obrázek (před fade-outem)
   imagesToRotate.forEach(item => {
     if (item.element) {
+      const wrapper = item.element.parentElement;
+      if (wrapper && wrapper.classList.contains('carousel-wrapper')) {
+        wrapper.style.backgroundImage = `url('${item.element.src}')`;
+      }
       item.element.style.opacity = '0';
     }
   });
 
-  // 2. Změna src a plynulý fade-in po dokončení ztlumení (300ms)
-  setTimeout(() => {
-    currentImage++;
-    if (currentImage > maxImages) {
-      currentImage = 1;
-    }
+  // Zvýšíme index pro další obrázek
+  currentImage++;
+  if (currentImage > maxImages) {
+    currentImage = 1;
+  }
 
+  // 2. Změna src a plynulý fade-in
+  setTimeout(() => {
     imagesToRotate.forEach(item => {
       if (item.element) {
         item.element.src = `${item.prefix}${currentImage}.jpg`;
@@ -238,12 +243,12 @@ function rotateImage() {
         };
 
         // Pojistka pro případ, že je obrázek v mezipaměti a onload se nespustí
-        setTimeout(() => {
+        if (item.element.complete) {
           item.element.style.opacity = '1';
-        }, 50);
+        }
       }
     });
-  }, 300);
+  }, 250);
 }
 
 // Spuštění koloběhu obrázků
