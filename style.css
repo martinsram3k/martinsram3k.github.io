@@ -6,8 +6,8 @@
   --background-color-darker: #060607;
   --text-color: #ffffff;
   --text-color-muted: #94a3b8;
-  --primary-color: #ff7a00;
-  --primary-hover: #ff9a33;
+  --primary-color: hsl(360, 85%, 50%);
+  --primary-hover: hsl(360, 85%, 60%);
   --line-color: rgba(255, 255, 255, 0.08);
   --surface-color: #111115;
   --surface-hover: #16161c;
@@ -24,8 +24,8 @@
   --background-color-darker: #f0f0f0;
   --text-color: #111111;
   --text-color-muted: #64748b;
-  --primary-color: #e66e00;
-  --primary-hover: #ff7a00;
+  --primary-color: hsl(360, 85%, 45%);
+  --primary-hover: hsl(360, 85%, 50%);
   --line-color: rgba(0, 0, 0, 0.08);
   --surface-color: #ffffff;
   --surface-hover: #f8fafc;
@@ -793,7 +793,7 @@ nav.scrolled {
   align-items: center;
   text-align: center;
   border: 1px dashed var(--primary-color);
-  background-color: rgba(255, 122, 0, 0.03);
+  background-color: rgba(255, 26, 26, 0.03);
   min-height: 280px;
 }
 
@@ -924,7 +924,7 @@ nav.scrolled {
 .contact-item:hover .contact-item-icon {
   border-color: var(--primary-color);
   color: var(--primary-color);
-  background-color: rgba(255, 122, 0, 0.05);
+  background-color: rgba(255, 26, 26, 0.05);
 }
 
 .contact-item-label {
@@ -995,7 +995,7 @@ nav.scrolled {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 26, 26, 0.15);
 }
 
 .form-buttons {
@@ -1096,7 +1096,7 @@ nav.scrolled {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--primary-color);
-  background-color: rgba(255, 122, 0, 0.08);
+  background-color: rgba(255, 26, 26, 0.08);
   padding: 4px 12px;
   border-radius: 12px;
 }
