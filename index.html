@@ -7,49 +7,19 @@
     <title>Martin Šrámek | Grafik, Video Editor & Vývojář</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Osobní portfolio Martina Šrámka. Jsem grafik, video editor a zakladatel Klipni.eu. Specializuji se na tvorbu obsahu, který funguje.">
-    <meta name="keywords" content="Martin Šrámek, Klipni.eu, video editor, grafik, 3D modelování, Přibyslav, tvůrce obsahu, freelance, portfolio">
+    <meta name="description" content="Osobní portfolio Martina Šrámka. Jsem grafik, video editor a vývojář. Specializuji se na střih videí, design a zakázkový hardware.">
+    <meta name="keywords" content="Martin Šrámek, Klipni.eu, video editor, grafik, vývojář, hardware, PCB design, Přibyslav, freelance, portfolio">
     <meta name="author" content="Martin Šrámek">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Martin Šrámek | Osobní Portfolio">
-    <meta property="og:description" content="Grafik, video editor a zakladatel Klipni.eu. Nabízím komplexní přístup od prvotního návrhu až po finální realizaci.">
+    <meta property="og:title" content="Martin Šrámek | Grafik & Vývojář">
+    <meta property="og:description" content="Tvorba videí, grafického designu a zakázkového hardwaru pod jednou střechou. Podívejte se na mé projekty.">
     <meta property="og:url" content="https://martinsram3k.github.io/">
     <meta property="og:site_name" content="Martin Šrámek">
     <meta property="profile:first_name" content="Martin">
     <meta property="profile:last_name" content="Šrámek">
-    
-    <!-- JSON-LD for AI & Search Engines -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Martin Šrámek",
-      "jobTitle": "Grafik a Video Editor",
-      "url": "https://martinsram3k.github.io/",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Tržiště 513",
-        "addressLocality": "Přibyslav",
-        "postalCode": "582 22",
-        "addressCountry": "CZ"
-      },
-      "alumniOf": "Střední škola informatiky a cestovního ruchu SČMSD Humpolec",
-      "knowsAbout": ["Video Editing", "Graphic Design", "3D Modeling", "Photography", "Marketing"],
-      "worksFor": [
-        {
-          "@type": "Organization",
-          "name": "Klipni.eu"
-        },
-        {
-          "@type": "Organization",
-          "name": "Tisicikoruna"
-        }
-      ]
-    }
-    </script>
     
     <!-- CSS & Fonts -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -60,397 +30,548 @@
 
 <body>
 
-    <div class="top-button"><span class="material-symbols-outlined">
-            arrow_upward
-        </span></div>
+    <!-- Back to top button -->
+    <div class="top-button">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </div>
 
-    <nav class>
+    <!-- Navigation Header -->
+    <nav>
         <ul class="nav-container">
             <li class="nav-logo">
                 <a href="index.html">
-                    <h1 class="komet">Martin
-                        Šrámek</h1>
+                    <h1>Martin Šrámek<span>.</span></h1>
                 </a>
             </li>
 
             <li class="nav-links">
                 <ul>
-                    <li><a href id="home-button" class="komet  active-link">DOMŮ</a></li>
-                    <li><a id="about-button" href class="komet">O
-                            MNĚ</a></li>
-                    <li><a id="portfolio-button" href class="komet">PORTFOLIO</a></li>
+                    <li><a href="#domu" id="home-button" class="active-link">DOMŮ</a></li>
+                    <li><a href="#o-mne" id="about-button">O MNĚ</a></li>
+                    <li><a href="#portfolio" id="portfolio-button">PORTFOLIO</a></li>
+                    <li><a href="#kontakt" id="contact-button">KONTAKT</a></li>
                 </ul>
             </li>
 
             <li class="nav-contact">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Přepnout motiv">
                     <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
                 </button>
-                <div class="language-switcher"> <a href="index.html" class="active-lang">CZ</a></div>
-                <div class="language-switcher"> <a href="en.html" style="color: #555555;">EN</a></div>
-                <a style="color: white;" href="#contact-section" class="komet kontakt" id="contact-button">KONTAKT</a>
+                <div class="language-switcher">
+                    <a href="index.html" class="active-lang">CZ</a> | 
+                    <a href="en.html">EN</a>
+                </div>
+                <a href="#kontakt" class="kontakt-btn">Poptat projekt</a>
             </li>
         </ul>
     </nav>
 
     <main>
-    <div class="hero-section">
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="domu" class="hero-section">
+            <div class="hero-bg-text">MS.</div>
+            <div class="hero-container">
+                <!-- Text Content -->
+                <div class="hero-content animate-on-scroll">
+                    <p class="hero-tag">Freelance Creative Developer</p>
+                    <h1 class="hero-title">Martin Šrámek</h1>
+                    <p class="hero-subtitle">
+                        Video <span>•</span> Grafika <span>•</span> Web <span>•</span> Hardware <span>•</span> Custom PCB
+                    </p>
+                    <p class="hero-description">
+                        „Zachycuji momenty, emoce a atmosféru skrz video, design a moderní technologie tak, aby každý projekt vyprávěl svůj vlastní příběh.“
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn-accent">
+                            Prohlédnout portfolio
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </a>
+                        <a href="#kontakt" class="btn-ghost">Kontakt</a>
+                    </div>
+                </div>
 
-        <div class="komet">
-            <h2>👋 Jmenuju se Martin Šrámek</h2>
-        </div>
+                <!-- Portrait Photo -->
+                <div class="animate-on-scroll animate-delay-1">
+                    <div class="hero-image-wrapper">
+                        <img src="about.png" alt="Martin Šrámek — Creative Developer">
+                        <div class="hero-image-gradient"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">scroll</div>
+        </section>
 
-        <div class="bgText">
-            <h3 class="gunter" style=" font-size: 16rem;">GRAFIK</h3>
-            <h3 style="letter-spacing: normal;" class="komet outline-text">&amp;
-                VIDEO EDITOR</h3>
-        </div>
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="o-mne" class="about-section">
+            <div class="about-grid">
+                <!-- Text column -->
+                <div class="animate-on-scroll">
+                    <p class="about-tag">O mně</p>
+                    <h2 class="about-title">Za objektivem &amp; klávesnicí</h2>
+                    <div class="about-text">
+                        <p>
+                            Ahoj, jsem Martin Šrámek. Vedu kreativní projekty, stříhám videa a vyvíjím zakázkový hardware i weby. Věřím, že technologie a design k sobě neoddělitelně patří. Každou spolupráci zakládám na technické přesnosti a pochopení vize klienta.
+                        </p>
+                        <p>
+                            Kombinace analytického IT myšlení a citu pro grafický detail mi umožňuje tvořit ucelená řešení pod jednou střechou – od dynamického střihu přes tiskoviny až po vývoj IoT zařízení a custom plošných spojů. Aktivně stříhám videa pro projekt Tisicikoruna, vyvíjím platformu Klipni.eu a spolupracuji s marketingovými agenturami.
+                        </p>
+                    </div>
+                    
+                    <div class="about-meta">
+                        <div class="about-meta-col">
+                            <h4>Zájmy</h4>
+                            <ul>
+                                <li>3D modelování &amp; 3D tisk</li>
+                                <li>Fotografie</li>
+                                <li>PCB design &amp; IoT</li>
+                                <li>Parkour &amp; fitness</li>
+                            </ul>
+                        </div>
+                        <div class="about-meta-col">
+                            <h4>Vzdělání</h4>
+                            <ul>
+                                <li>Informační technologie (SŠ Humpolec)</li>
+                                <li>Reprodukční grafik (SŠ Humpolec)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
+                <!-- Image column -->
+                <div class="animate-on-scroll animate-delay-1">
+                    <div class="about-image-wrapper">
+                        <img src="noc_vedcu.jpg" alt="Martin Šrámek v akci">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="about">
-        <div class="colum1 animate-on-scroll">
-            <img class="aboutImg" src="about.png" alt="Portrét Martin Šrámek" width="400" height="400" loading="lazy">
-            <h3>Zájmy</h3>
-            <ul>
-                <li>3D modelování a 3D tisk</li>
-                <li>Fotografování</li>
-                <li>PCB design</li>
-                <li>Parkour</li>
-                <li>Posilovna</li>
+        <!-- ==================== MARQUEE SLIDER ==================== -->
+        <section class="marquee-section">
+            <h3 class="marquee-title">Tvorba v pohybu</h3>
+            <div class="marquee-mask">
+                <div class="marquee-track">
+                    <!-- Duplicate items for seamless loop -->
+                    <div class="marquee-item"><img src="grafika_leap.jpg" alt="Plakát LEAP"></div>
+                    <div class="marquee-item"><img src="disoa1.jpg" alt="DISOA focení"></div>
+                    <div class="marquee-item"><img src="relax_zen1.jpg" alt="Relax Zen produktovka"></div>
+                    <div class="marquee-item"><img src="wafk1.jpg" alt="WAFK akce"></div>
+                    <div class="marquee-item"><img src="beauty1.jpg" alt="BeautyPlace focení"></div>
+                    <div class="marquee-item"><img src="volnocas1.jpg" alt="Volnočasové foto"></div>
+                    <!-- Duplicate -->
+                    <div class="marquee-item"><img src="grafika_leap.jpg" alt="Plakát LEAP"></div>
+                    <div class="marquee-item"><img src="disoa1.jpg" alt="DISOA focení"></div>
+                    <div class="marquee-item"><img src="relax_zen1.jpg" alt="Relax Zen produktovka"></div>
+                    <div class="marquee-item"><img src="wafk1.jpg" alt="WAFK akce"></div>
+                    <div class="marquee-item"><img src="beauty1.jpg" alt="BeautyPlace focení"></div>
+                    <div class="marquee-item"><img src="volnocas1.jpg" alt="Volnočasové foto"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PORTFOLIO SECTION ==================== -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="portfolio-header animate-on-scroll">
+                <p class="portfolio-tag">Portfolio</p>
+                <h2 class="portfolio-title">Kategorie</h2>
+            </div>
+
+            <!-- Aspect 3/4 Category Cards -->
+            <div class="category-cards-grid">
+                <!-- Video -->
+                <div class="category-card animate-on-scroll" data-target-filter="video">
+                    <img src="noc_vedcu.jpg" class="category-card-bg" alt="Video">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Video</h3>
+                        <p class="category-card-desc">Střih, postprodukce, reels a aftermovie.</p>
+                        <div class="category-card-link">
+                            Zobrazit projekty
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grafika -->
+                <div class="category-card animate-on-scroll animate-delay-1" data-target-filter="grafika">
+                    <img src="grafika_leap.jpg" class="category-card-bg" alt="Grafika">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Grafika</h3>
+                        <p class="category-card-desc">Plakáty, vizuální styl a sociální sítě.</p>
+                        <div class="category-card-link">
+                            Zobrazit projekty
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Motion -->
+                <div class="category-card animate-on-scroll animate-delay-2" data-target-filter="motionGrafika">
+                    <img src="blue_white_ON_1.png" class="category-card-bg" alt="Motion">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Motion</h3>
+                        <p class="category-card-desc">Animace log, vizuálů a přechodů.</p>
+                        <div class="category-card-link">
+                            Zobrazit projekty
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Foto -->
+                <div class="category-card animate-on-scroll animate-delay-3" data-target-filter="foto">
+                    <img src="relax_zen1.jpg" class="category-card-bg" alt="Foto">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Foto</h3>
+                        <p class="category-card-desc">Produktová, reportážní a ambientní fotografie.</p>
+                        <div class="category-card-link">
+                            Zobrazit projekty
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hardware -->
+                <div class="category-card animate-on-scroll animate-delay-3" data-target-filter="hardware">
+                    <img src="custom_pcb_design.jpg" class="category-card-bg" alt="Hardware">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Hardware</h3>
+                        <p class="category-card-desc">Návrh PCB, Arduino a IoT řešení na míru.</p>
+                        <div class="category-card-link">
+                            Zobrazit projekty
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M13 6l6 6-6 6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimal Filter Bar -->
+            <ul class="portfolio-filter-bar animate-on-scroll">
+                <li><button class="portfolio-filter-btn active" data-filter="vse">VŠE</button></li>
+                <li><button class="portfolio-filter-btn" data-filter="video">VIDEO</button></li>
+                <li><button class="portfolio-filter-btn" data-filter="grafika">GRAFIKA</button></li>
+                <li><button class="portfolio-filter-btn" data-filter="motionGrafika">MOTION GRAFIKA</button></li>
+                <li><button class="portfolio-filter-btn" data-filter="foto">FOTO</button></li>
+                <li><button class="portfolio-filter-btn" data-filter="hardware">HARDWARE</button></li>
             </ul>
-        </div>
 
-        <div class="colum2 animate-on-scroll animate-delay-1">
-            <div>
-                <h3>Ahoj já jsem Martin</h3>
-                <p>Ahoj, jsem Martin Šrámek a jsem grafik, video editor a student IT, který věří, že technologie a
-                    kreativita k sobě neoddělitelně patří. Svou práci nestavím jen na vizuální estetice, ale i na
-                    technické preciznosti a pochopení potřeb klienta. Kombinace analytického myšlení z IT studia a citu
-                    pro detail, který jsem získal díky výučnímu listu v oboru reprodukční grafik, mi umožňuje tvořit
-                    obsah, který nejen dobře vypadá, ale hlavně funguje – ať už jde o dynamické video na sociální sítě,
-                    čistou produktovou fotografii nebo grafický design. Nečerpám jen z teorie, ale aktivně se věnuji
-                    střihu videí pro projekt Tisicikoruna, spolupracuji s marketingovými agenturami a fotím pro lokální
-                    firmy, což mi dává přímý vhled do toho, co dnes na trhu skutečně prodává. Díky studiu IT se nebojím
-                    výzev, jako je 3D modelování, tvorba webů nebo práce s hardwarem, což mi umožňuje nabízet komplexní
-                    přístup od prvotního návrhu až po finální realizaci pod jednou střechou. Když zrovna nepracuji na
-                    střižně nebo v grafickém editoru, najdete mě v posilovně, na parkurovém tréninku nebo jak se věnuji
-                    3D tisku a elektronice. Pojďme spolu vytvořit něco, co má smysl, ať už potřebujete nafotit produkty,
-                    sestříhat virální video nebo vytvořit web na klíč, rád vám pomohu posunout váš projekt o úroveň výš.
-                </p>
-            </div>
-
-            <div>
-                <h3>Vzdělání</h3>
-                <ul type="none">
-                    <li>Střední škola informatiky a cestovního ruchu SČMSD
-                        Humpolec, s.r.o.
-                        <br> <strong>Obor: Informační technologie</strong>
-                        <br> 2022 - 2029
-                    </li>
-                    <li>Střední škola informatiky a cestovního ruchu SČMSD
-                        Humpolec, s.r.o.
-                        <br> <strong>Obor: Reprodukční grafik</strong> <br>
-                        2022 - 2025
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-
-        <div class="colum3 animate-on-scroll animate-delay-2">
-            <div>
-                <h3>Pracovní zkušenosti</h3>
-                <ul type="none">
-
-                    <li>Tisicikorun Video editor
-                        <br> <strong>Říjen 2025 - Součastnost</strong>
-
-                    </li>
-
-                    <li>ACO Industries, k.s. Asistent marketingu
-                        <br> <strong>Srpen 2025 - Srpen 2025</strong>
-
-                    </li>
-
-                    <li>JCgraphics s.r.o. Praxe
-                        <br> <strong>Leden 2023 - Červen 2025</strong>
-
-                    </li>
-
-                    <li>Leap Parkour Trenér
-                        <br> <strong>Červen 2023 - Součastnost</strong>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div>
-                <h3>Dovednosti</h3>
-                <ul>
-                    <li>Adobe Photoshop</li>
-                    <li>Adobe Illustrator</li>
-                    <li>Adobe Premiere Pro</li>
-                    <li>Adobe After Effects</li>
-                    <li>Blender</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="portfolio" class="portfolio portfolioUnloaded">
-
-        <ul class="gunter">
-            <li>
-                <a style="text-decoration: none;" href="#vse" id="portfolio_vse" class="portfolio-link active">VŠE</a>
-            </li>
-            <li>
-                <a style="text-decoration: none;" href="#video" id="portfolio_video" class="portfolio-link">VIDEO</a>
-            </li>
-            <li>
-                <a style="text-decoration: none;" href="#grafika" id="portfolio_grafika" class="portfolio-link">GRAFIKA</a>
-            </li>
-            <li>
-                <a style="text-decoration: none;" href="#motionGrafika" id="portfolio_motion" class="portfolio-link">MOTION GRAFIKA</a>
-            </li>
-            <li>
-                <a style="text-decoration: none;" href="#foto" id="portfolio_foto" class="portfolio-link">FOTO</a>
-            </li>
-        </ul>
-
-        <div class="portfolio-grid">
-            <!-- 1. VIDEO -->
-            <div class="portfolio-item animate-on-scroll" data-category="video">
-                <span class="category-badge">Video</span>
-                <iframe width="100%" src="https://www.youtube.com/embed/PLACEHOLDER_ID_1" title="Video z akce Cesta pizzy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                <h3>Video z akce "cesta pizzy"</h3>
-                <p>Pro základní školu <a href="https://www.zshradska.cz/" target="_blank">Hradská Humpolec</a> jsem vytvořil video z akce "cesta pizzy".</p>
-            </div>
-            
-            <div class="portfolio-item animate-on-scroll" data-category="video">
-                <span class="category-badge">Video</span>
-                <iframe width="100%" src="https://www.youtube.com/embed/1OjZVYD8AI8" title="Mimo Osnovy TalkShow & EXPO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                <h3>Mimo Osnovy TalkShow & EXPO</h3>
-                <p>Video a střih z živé talkshow Lukáše Ondráčka a doprovodného EXPO festivalu v Havlíčkově Brodě. Více informací na <a href="https://mimoosnovy.cz/" target="_blank">mimoosnovy.cz</a> a <a href="https://www.wafk.cz/mimo-osnovy-expo" target="_blank">wafk.cz</a>.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="video">
-                <span class="category-badge">Video</span>
-                <iframe width="100%" src="https://www.youtube.com/embed/wuxzQJTXFlE" title="WAFK Jarní Benchpress 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                <h3>WAFK Jarní Benchpress 2026</h3>
-                <p>Aftermovie ze silové soutěže v benchpressu pořádané organizací <a href="https://www.wafk.cz/jarni-benche-2026" target="_blank">WAFK</a>.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="video">
-                <span class="category-badge">Video</span>
-                <iframe width="100%" src="https://www.youtube.com/embed/PLACEHOLDER_TISICIKORUNA" title="Video editor pro Tisicikoruna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                <h3>Video editor pro Tisicikorunu</h3>
-                <p>Střih a úprava krátkých dynamických videí a reels na sociální sítě pro projekt <a href="https://www.instagram.com/tisicikoruna/" target="_blank">Tisicikoruna</a>.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="video">
-                <span class="category-badge">Video</span>
-                <iframe width="100%" src="https://www.youtube.com/embed/OuuTOorjj6w" title="Tvorba podcastu pro SŠ Humpolec" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                <h3>Tvorba podcastu pro SŠ Humpolec</h3>
-                <p>Kompletní technická produkce, záznam zvuku, střih a zpracování video-podcastů pro <a href="https://www.stredniskola.com/" target="_blank">Střední školu informatiky a cestovního ruchu Humpolec</a>.</p>
-            </div>
-
-            <!-- 2. GRAFIKA -->
-            <div class="portfolio-item animate-on-scroll" data-category="grafika">
-                <span class="category-badge">Grafika</span>
-                <img src="grafika_leap.jpg" alt="Plakát LEAP Camp 2025" width="800" height="800" loading="lazy">
-                <h3>Plakát pro LEAP kemp 2025</h3>
-                <p>Pro parkurovou skupinu <a href="https://leapparkour.cz/" target="_blank">LEAP</a> jsem vytvořil plakát pro kemp 2025.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="grafika">
-                <span class="category-badge">Grafika</span>
-                <img src="grafika_wafk.jpg" alt="Plakát WAFK" width="800" height="800" loading="lazy">
-                <h3>Příspěvek na sociální sítě</h3>
-                <p>Pro sportovní akce <a href="https://www.wafk.cz/" target="_blank">WAFK</a> jsem vytvořil propagační příspěvek na sociální sítě.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="grafika">
-                <span class="category-badge">Grafika</span>
-                <img src="grafika_zijna200.jpg" alt="Plakát Žij na 200%" width="800" height="800" loading="lazy">
-                <h3>Plakát Žij na 200 %</h3>
-                <p>Grafický návrh a tisková příprava propagačního plakátu pro projekt Žij na 200 %.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="grafika">
-                <span class="category-badge">Grafika</span>
-                <img src="grafika_tasteofindia.jpg" alt="Taste of India branding" width="800" height="800" loading="lazy">
-                <h3>Branding Taste of India</h3>
-                <p>Návrh loga, vizuálního stylu a reklamních bannerů pro indickou restauraci Taste of India.</p>
-            </div>
-
-            <!-- 3. MOTION GRAFIKA -->
-            <div class="portfolio-item animate-on-scroll" data-category="motionGrafika">
-                <span class="category-badge">Motion Grafika</span>
-                <video controlsList="nodownload" muted controls width="100%" poster="blue_white_ON_1.png" aria-label="Ukázka práce">
-                    <track kind="captions" src="" srclang="cs" label="České titulky">
-                    <source src="vid/blue_white_ON_1.mp4" type="video/mp4">
-                    Váš prohlížeč nepodporuje přehrávání videa.
-                </video>
-                <h3>Logo animace pro learning triangle</h3>
-                <p>Pro learning triangle <a href="https://www.learningtriangle.cz/" target="_blank">Learning Triangle</a> jsem vytvořil animaci z jejich loga.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="motionGrafika">
-                <span class="category-badge">Motion Grafika</span>
-                <video controlsList="nodownload" muted controls width="100%" poster="e-kafe-logo-black.png" aria-label="Ukázka práce">
-                    <track kind="captions" src="" srclang="cs" label="České titulky">
-                    <source src="vid/e-kafe-logo-black.mp4" type="video/mp4">
-                    Váš prohlížeč nepodporuje přehrávání videa.
-                </video>
-                <h3>Logo animace pro e-kafe.cz</h3>
-                <p>Pro e-kafe.cz <a href="https://www.e-kafe.cz/" target="_blank">e-kafe.cz</a> jsem vytvořil animaci z jejich loga.</p>
-            </div>
-
-            <!-- 4. FOTO -->
-            <div class="portfolio-item animate-on-scroll" data-category="foto">
-                <span class="category-badge">Foto</span>
-                <div class="carousel-wrapper">
-                    <img id="carusel1" src="disoa1.jpg" alt="Focení DISOA" width="800" height="533" loading="lazy">
-                </div>
-                <h3>Fotografování pro DISOA</h3>
-                <p>Pro marketingovou agenturu <a target="_blank" href="https://www.disoa.cz/">DISOA</a> jsem fotografoval pro jejich klienty.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="foto">
-                <span class="category-badge">Foto</span>
-                <div class="carousel-wrapper">
-                    <img id="carusel2" src="wafk1.jpg" alt="Focení WAFK" width="800" height="533" loading="lazy">
-                </div>
-                <h3>Fotografování pro WAFK</h3>
-                <p>Pro sportovní akce <a target="_blank" href="https://www.wafk.cz/">WAFK</a> jsem fotografoval jejich akce.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="foto">
-                <span class="category-badge">Foto</span>
-                <div class="carousel-wrapper">
-                    <img id="carusel3" src="beauty1.jpg" alt="Focení BeautyPlace" width="800" height="533" loading="lazy">
-                </div>
-                <h3>Fotografování pro BeautyPlace</h3>
-                <p>Pro salon <a target="_blank" href="https://www.notino.cz/salony/beautyplace/">Beauty place</a> jsem vytvořil fotky their space</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="foto">
-                <span class="category-badge">Foto</span>
-                <div class="carousel-wrapper">
-                    <img id="carusel4" src="hankwoody1.jpg" alt="Focení HankWoody" width="800" height="533" loading="lazy">
-                </div>
-                <h3>Produktové fotografie</h3>
-                <p>Pro řemeslníka <a target="_blank" href="https://www.fler.cz/hank-woody?srsltid=AfmBOoph0ccu11Cott9a-PI1Xcri2V8GycJ3F-3k600QJwJZq2brH15L">Hank Woody</a> jsem fotografoval jeho dřevěné prsteny.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="foto">
-                <span class="category-badge">Foto</span>
-                <div class="carousel-wrapper">
-                    <img id="carusel5" src="relax_zen1.jpg" alt="Focení Relax Zen" width="800" height="533" loading="lazy">
-                </div>
-                <h3>Fotografování Relax Zen</h3>
-                <p>Produktové a ambientní fotografie pro relaxační, masážní a wellness centrum Relax Zen.</p>
-            </div>
-
-            <div class="portfolio-item animate-on-scroll" data-category="foto">
-                <span class="category-badge">Foto</span>
-                <div class="carousel-wrapper">
-                    <img id="carusel6" src="volnocas1.jpg" alt="Focení Volný čas" width="800" height="533" loading="lazy">
-                </div>
-                <h3>Fotografování ve volném čase</h3>
-                <p>Kreativní záběry, krajiny a momentky zachycené během mých volnočasových aktivit.</p>
-            </div>
-
-            <!-- 5. CTA KARTA NA KONCI -->
-            <div class="portfolio-item portfolio-cta animate-on-scroll" data-category="cta">
-                <div class="portfolio-cta-content">
-                    <span class="material-symbols-outlined cta-icon">assured_workload</span>
-                    <h3>Chcete podobný výsledek?</h3>
-                    <p>Pojďme vytvořit něco skvělého pro váš projekt nebo firmu.</p>
-                    <a href="#kontakt-a-fakturace" class="cta-button">Pojďme na to!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="portfolio-more-link animate-on-scroll">
-            <p class="komet">...a mnoho dalších projektů naleznete na mém <a href="https://drive.google.com/drive/folders/PLACEHOLDER_GOOGLE_DRIVE_PORTFOLIO" target="_blank">Google Disku</a>.</p>
-        </div>
-
-    </div>
-
-    <section id="kontakt-a-fakturace" class="contact-section">
-        <div class="container contact-billing-wrapper">
-
-            <form action="https://formspree.io/f/maqokenj" method="POST" class="contact-form animate-on-scroll">
-
-                <h2 style="margin-top: 0;" class="komet">Kontaktujte mě</h2>
-                <p style="margin-bottom: 40px;" class="komet">Máte zájem o spolupráci?
-                    Napište mi zprávu.</p>
-                <div class="form-group">
-                    <label for="name" class="komet">Jméno:</label>
-                    <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="komet">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message" class="komet">Zpráva:</label>
-                    <textarea id="message" name="message" rows="5" placeholder="O čem budeme mluvit?"
-                        required></textarea>
-                </div>
-
-                <button type="submit" class="komet submit-btn">ODESLAT
-                </button>
-
-                <button type="reset" class="komet reset-btn">VYMAZAT
-                    FORMULÁŘ</button>
-            </form>
-
-            <!-- Fakturační údaje vedle formuláře -->
-            <div class="billing-card komet animate-on-scroll animate-delay-1">
-                <div class="billing-header">
-                    <h3>Podnikatelské údaje</h3>
+            <!-- Portfolio Items Grid -->
+            <div class="portfolio-grid">
+                <!-- 1. VIDEO -->
+                <div class="portfolio-item animate-on-scroll" data-category="video">
+                    <span class="category-badge">Video</span>
+                    <iframe width="100%" src="https://www.youtube.com/embed/PLACEHOLDER_ID_1" title="Video z akce Cesta pizzy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <h3>Video z akce "Cesta pizzy"</h3>
+                    <p>Pro základní školu <a href="https://www.zshradska.cz/" target="_blank">Hradská Humpolec</a> jsem vytvořil aftermovie z akce Cesta pizzy.</p>
                 </div>
                 
-                <div class="billing-content">
-                    <div class="info-group">
-                        <span class="label">Jméno a příjmení:</span>
-                        <span class="value highlight">Martin Šrámek</span>
-                    </div>
-                    <div class="info-group">
-                        <span class="label">IČO:</span>
-                        <span class="value gradient-text" style="font-size: 1rem;">29778999</span>
-                    </div>
-                    <div class="info-group">
-                        <span class="label">DIČ:</span>
-                        <span class="value">Nejsem plátce DPH</span>
-                    </div>
-                    <div class="info-group">
-                        <span class="label">Sídlo:</span>
-                        <span class="value">Tržiště 513, 582 22 Přibyslav</span>
-                    </div>
+                <div class="portfolio-item animate-on-scroll" data-category="video">
+                    <span class="category-badge">Video</span>
+                    <iframe width="100%" src="https://www.youtube.com/embed/1OjZVYD8AI8" title="Mimo Osnovy TalkShow & EXPO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <h3>Mimo Osnovy TalkShow &amp; EXPO</h3>
+                    <p>Video a střih z živé talkshow Lukáše Ondráčka a doprovodného festivalu. Web: <a href="https://mimoosnovy.cz/" target="_blank">mimoosnovy.cz</a>.</p>
                 </div>
-                
-                <div class="billing-footer">
-                    <p>Fyzická osoba zapsaná v živnostenském rejstříku.</p>
+
+                <div class="portfolio-item animate-on-scroll" data-category="video">
+                    <span class="category-badge">Video</span>
+                    <iframe width="100%" src="https://www.youtube.com/embed/wuxzQJTXFlE" title="WAFK Jarní Benchpress 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <h3>WAFK Jarní Benchpress 2026</h3>
+                    <p>Dynamické aftermovie ze silové soutěže v benchpressu pořádané organizací <a href="https://www.wafk.cz/jarni-benche-2026" target="_blank">WAFK</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="video">
+                    <span class="category-badge">Video</span>
+                    <iframe width="100%" src="https://www.youtube.com/embed/PLACEHOLDER_TISICIKORUNA" title="Video editor pro Tisicikoruna" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <h3>Video editor pro Tisicikorunu</h3>
+                    <p>Střih a úprava krátkých dynamických reels videí pro finanční projekt <a href="https://www.instagram.com/tisicikoruna/" target="_blank">Tisicikoruna</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="video">
+                    <span class="category-badge">Video</span>
+                    <iframe width="100%" src="https://www.youtube.com/embed/OuuTOorjj6w" title="Tvorba podcastu pro SŠ Humpolec" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <h3>Tvorba podcastu pro SŠ Humpolec</h3>
+                    <p>Kompletní technická produkce, střih a zpracování video-podcastů pro <a href="https://www.stredniskola.com/" target="_blank">SŠ Humpolec</a>.</p>
+                </div>
+
+                <!-- 2. GRAFIKA -->
+                <div class="portfolio-item animate-on-scroll" data-category="grafika">
+                    <span class="category-badge">Grafika</span>
+                    <img src="grafika_leap.jpg" alt="Plakát LEAP Camp 2025" loading="lazy">
+                    <h3>Plakát pro LEAP kemp 2025</h3>
+                    <p>Kompletní grafický návrh plakátu pro letní kemp parkourové organizace <a href="https://leapparkour.cz/" target="_blank">LEAP</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="grafika">
+                    <span class="category-badge">Grafika</span>
+                    <img src="grafika_wafk.jpg" alt="Plakát WAFK" loading="lazy">
+                    <h3>Příspěvky na sociální sítě</h3>
+                    <p>Propagační grafika pro sportovní akce a sociální sítě silové organizace <a href="https://www.wafk.cz/" target="_blank">WAFK</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="grafika">
+                    <span class="category-badge">Grafika</span>
+                    <img src="grafika_zijna200.jpg" alt="Plakát Žij na 200%" loading="lazy">
+                    <h3>Plakát Žij na 200 %</h3>
+                    <p>Grafický návrh a tisková příprava propagačního plakátu pro motivační kampaň Žij na 200 %.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="grafika">
+                    <span class="category-badge">Grafika</span>
+                    <img src="grafika_tasteofindia.jpg" alt="Taste of India branding" loading="lazy">
+                    <h3>Branding Taste of India</h3>
+                    <p>Vizuální identita, menu lístky a venkovní reklamní bannery pro restauraci Taste of India.</p>
+                </div>
+
+                <!-- 3. MOTION GRAFIKA -->
+                <div class="portfolio-item animate-on-scroll" data-category="motionGrafika">
+                    <span class="category-badge">Motion</span>
+                    <video controlsList="nodownload" muted controls poster="blue_white_ON_1.png">
+                        <source src="vid/blue_white_ON_1.mp4" type="video/mp4">
+                    </video>
+                    <h3>Logo animace pro Learning Triangle</h3>
+                    <p>Rozpohybování a animace loga pro vzdělávací learning platformu <a href="https://www.learningtriangle.cz/" target="_blank">Learning Triangle</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="motionGrafika">
+                    <span class="category-badge">Motion</span>
+                    <video controlsList="nodownload" muted controls poster="e-kafe-logo-black.png">
+                        <source src="vid/e-kafe-logo-black.mp4" type="video/mp4">
+                    </video>
+                    <h3>Logo animace pro e-kafe.cz</h3>
+                    <p>Moderní a čistá reklamní animace loga pro internetový obchod s kávou <a href="https://www.e-kafe.cz/" target="_blank">e-kafe.cz</a>.</p>
+                </div>
+
+                <!-- 4. FOTO -->
+                <div class="portfolio-item animate-on-scroll" data-category="foto">
+                    <span class="category-badge">Foto</span>
+                    <div class="carousel-wrapper">
+                        <img id="carusel1" src="disoa1.jpg" alt="Focení DISOA" loading="lazy">
+                    </div>
+                    <h3>Fotografování pro DISOA</h3>
+                    <p>Reportážní a promo fotografie pro klienty marketingové agentury <a target="_blank" href="https://www.disoa.cz/">DISOA</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="foto">
+                    <span class="category-badge">Foto</span>
+                    <div class="carousel-wrapper">
+                        <img id="carusel2" src="wafk1.jpg" alt="Focení WAFK" loading="lazy">
+                    </div>
+                    <h3>Fotografování pro WAFK</h3>
+                    <p>Sportovní a akční fotografie z fitness a powerliftingových soutěží organizace <a target="_blank" href="https://www.wafk.cz/">WAFK</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="foto">
+                    <span class="category-badge">Foto</span>
+                    <div class="carousel-wrapper">
+                        <img id="carusel3" src="beauty1.jpg" alt="Focení BeautyPlace" loading="lazy">
+                    </div>
+                    <h3>Fotografování pro BeautyPlace</h3>
+                    <p>Interiérová a produktová fotografie pro kosmetický salon <a target="_blank" href="https://www.notino.cz/salony/beautyplace/">BeautyPlace</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="foto">
+                    <span class="category-badge">Foto</span>
+                    <div class="carousel-wrapper">
+                        <img id="carusel4" src="hankwoody1.jpg" alt="Focení HankWoody" loading="lazy">
+                    </div>
+                    <h3>Produktové fotografie</h3>
+                    <p>Fotografování detailů a linií dřevěných prstenů pro řemeslnou značku <a target="_blank" href="https://www.fler.cz/hank-woody">Hank Woody</a>.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="foto">
+                    <span class="category-badge">Foto</span>
+                    <div class="carousel-wrapper">
+                        <img id="carusel5" src="relax_zen1.jpg" alt="Focení Relax Zen" loading="lazy">
+                    </div>
+                    <h3>Fotografování Relax Zen</h3>
+                    <p>Produktová a ambientní fotografie pro masážní a relaxační salon Relax Zen.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="foto">
+                    <span class="category-badge">Foto</span>
+                    <div class="carousel-wrapper">
+                        <img id="carusel6" src="volnocas1.jpg" alt="Focení Volný čas" loading="lazy">
+                    </div>
+                    <h3>Fotografování ve volném čase</h3>
+                    <p>Krajiny, street art a kreativní záběry zachycené během mých cest a aktivit.</p>
+                </div>
+
+                <!-- 5. HARDWARE -->
+                <div class="portfolio-item animate-on-scroll" data-category="hardware">
+                    <span class="category-badge">Hardware</span>
+                    <img src="custom_pcb_design.jpg" alt="FLOW Macro Keyboard" loading="lazy">
+                    <h3>🔌 FLOW Macro Keyboard</h3>
+                    <p>Vlastní programovatelná makro klávesnice s vlastním návrhem PCB desky a firmwaru v C/C++.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="hardware">
+                    <span class="category-badge">Hardware</span>
+                    <img src="blue_white_ON_1.png" alt="Node Smart Clock" loading="lazy">
+                    <h3>⏰ Node-Smart-Clock</h3>
+                    <p>Chytré hodiny postavené na zakázkovém hardwaru se synchronizací času přes Wi-Fi a API.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="hardware">
+                    <span class="category-badge">Hardware</span>
+                    <img src="custom_pcb_design.jpg" alt="ESP32 Fan Control" loading="lazy">
+                    <h3>🌡️ ESP32 Fan Control</h3>
+                    <p>Automatický regulátor ventilátorů na základě teploty čidel s bezdrátovým webovým rozhraním.</p>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll" data-category="hardware">
+                    <span class="category-badge">Hardware</span>
+                    <img src="about.png" alt="Smart Mirror" loading="lazy">
+                    <h3>🪞 Raspberry Pi Smart Mirror</h3>
+                    <p>Chytré zrcadlo s integrací kalendáře, předpovědi počasí a ovládání domácnosti.</p>
+                </div>
+
+                <!-- CTA KARTA NA KONCI -->
+                <div class="portfolio-item portfolio-cta animate-on-scroll" data-category="cta">
+                    <div class="portfolio-cta-content">
+                        <span class="material-symbols-outlined cta-icon">assured_workload</span>
+                        <h3>Máš nápad na projekt?</h3>
+                        <p>Pojďme společně vytvořit něco skvělého pro tvůj projekt nebo firmu.</p>
+                        <a href="#kontakt" class="cta-button">Pojďme na to!</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <div class="portfolio-more-link animate-on-scroll">
+                <p>...a mnoho dalších projektů naleznete na mém <a href="https://drive.google.com/drive/folders/PLACEHOLDER_GOOGLE_DRIVE_PORTFOLIO" target="_blank">Google Disku</a>.</p>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT & BILLING SECTION ==================== -->
+        <section id="kontakt" class="contact-section">
+            <div class="contact-grid">
+                <!-- Left column: contacts and pricing -->
+                <div class="animate-on-scroll">
+                    <p class="contact-tag">Kontakt</p>
+                    <h2 class="contact-title">Máš nápad na projekt?</h2>
+                    <p class="contact-desc">
+                        Ať už jde o střih videa, grafický design, webovou aplikaci nebo zakázkový IoT hardware s plošným spojem, rád tvůj nápad zrealizuji přesně podle tvých představ.
+                    </p>
+
+                    <!-- Pricing card -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Orientační ceník</h3>
+                        <p class="pricing-desc">Výsledná cena se odvíjí od rozsahu a typu projektu.</p>
+                        <ul class="pricing-list">
+                            <li>
+                                <span class="pricing-service">Střih videa / Aftermovie</span>
+                                <span class="pricing-price">Na vyžádání</span>
+                            </li>
+                            <li>
+                                <span class="pricing-service">Grafický design / Branding</span>
+                                <span class="pricing-price">Na vyžádání</span>
+                            </li>
+                            <li>
+                                <span class="pricing-service">Tvorba webových stránek</span>
+                                <span class="pricing-price">Na vyžádání</span>
+                            </li>
+                            <li>
+                                <span class="pricing-service">Návrh hardwaru a PCB</span>
+                                <span class="pricing-price">Na vyžádání</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Direct contact list -->
+                    <ul class="contact-list">
+                        <li>
+                            <a href="https://instagram.com/martin.sram3k" target="_blank" rel="noopener" class="contact-item">
+                                <span class="contact-item-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                                </span>
+                                <div>
+                                    <span class="contact-item-label">Instagram</span>
+                                    <span class="contact-item-value">@martin.sram3k</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:martinsramek040707@gmail.com" class="contact-item">
+                                <span class="contact-item-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                                </span>
+                                <div>
+                                    <span class="contact-item-label">E-mail</span>
+                                    <span class="contact-item-value">martinsramek040707@gmail.com</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Billing data -->
+                    <div class="billing-card">
+                        <h4>Podnikatelské údaje</h4>
+                        <div class="billing-info-group">
+                            <span class="label">Jméno a příjmení:</span>
+                            <span class="value highlight">Martin Šrámek</span>
+                        </div>
+                        <div class="billing-info-group">
+                            <span class="label">IČO:</span>
+                            <span class="value highlight">29778999</span>
+                        </div>
+                        <div class="billing-info-group">
+                            <span class="label">DIČ:</span>
+                            <span class="value">Nejsem plátce DPH</span>
+                        </div>
+                        <div class="billing-info-group">
+                            <span class="label">Sídlo:</span>
+                            <span class="value">Tržiště 513, 582 22 Přibyslav</span>
+                        </div>
+                        <div class="billing-card-footer">
+                            Fyzická osoba zapsaná v živnostenském rejstříku.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column: form -->
+                <div class="animate-on-scroll animate-delay-1">
+                    <form action="https://formspree.io/f/maqokenj" method="POST" class="contact-form">
+                        <h3>Napiš mi zprávu</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">Jméno</label>
+                            <input type="text" id="name" name="name" placeholder="Tvé jméno" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Zpráva</label>
+                            <textarea id="message" name="message" rows="5" placeholder="O čem budeme mluvit?" required></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="submit-btn">Odeslat poptávku</button>
+                            <button type="reset" class="reset-btn">Vymazat</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- ==================== FOOTER ==================== -->
     <footer>
-
-        <p class="komet" style="position: absolute; right: 50px; margin-bottom: 20px;">&copy;
-            2026 Martin Šrámek. Všechna práva
-            vyhrazena.</p>
-
+        <p>© 2026 Martin Šrámek. Všechna práva vyhrazena.</p>
     </footer>
 
     <script src="script.js"></script>
