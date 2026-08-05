@@ -199,7 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initTiltEffect();
   initScrollParallax();
-  trackUTMParameters();
 });
 
 /**
@@ -382,46 +381,4 @@ function initTiltEffect() {
       if (desc) desc.style.transform = `translateZ(0px)`;
     });
   });
-}
-
-/**
- * 11. UTM VISITS TRACKER
- * Parses UTM query parameters and sends them to a Google Sheet Web App
- */
-function trackUTMParameters() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const utmSource = urlParams.get('utm_source');
-  const utmMedium = urlParams.get('utm_medium');
-  const utmCampaign = urlParams.get('utm_campaign');
-
-  if (utmSource || utmMedium || utmCampaign) {
-    // Vlož sem URL adresu své nasazené Google Web App aplikace:
-    const trackingUrl = 'SEM_VLOZ_SVOJE_URL_Z_GOOGLE_APPS_SCRIPT'; 
-    
-    if (trackingUrl.startsWith('SEM_VLOZ_')) {
-      console.warn('UTM Tracker: Google Apps Script URL není nakonfigurováno.');
-      return;
-    }
-
-    const payload = {
-      utm_source: utmSource,
-      utm_medium: utmMedium,
-      utm_campaign: utmCampaign,
-      utm_content: urlParams.get('utm_content') || '',
-      utm_term: urlParams.get('utm_term') || '',
-      referrer: document.referrer || 'direct',
-      url: window.location.href
-    };
-
-    fetch(trackingUrl, {
-      method: 'POST',
-      mode: 'no-cors', // Důležité pro obcházení CORS přesměrování u Google Apps Script
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    })
-    .then(() => console.log('UTM parameters sent to Google Sheet.'))
-    .catch(error => console.error('Error logging UTM parameters:', error));
-  }
 }
