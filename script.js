@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initTiltEffect();
   initScrollParallax();
+  trackUTMParameters();
 });
 
 /**
@@ -381,4 +382,40 @@ function initTiltEffect() {
       if (desc) desc.style.transform = `translateZ(0px)`;
     });
   });
+}
+
+/**
+ * 11. UTM VISITS TRACKER
+ * Parses UTM query parameters and sends them to the Laravel local server
+ */
+function trackUTMParameters() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmSource = urlParams.get('utm_source');
+  const utmMedium = urlParams.get('utm_medium');
+  const utmCampaign = urlParams.get('utm_campaign');
+
+  if (utmSource || utmMedium || utmCampaign) {
+    const trackingUrl = 'http://localhost:8081/track-utm'; // Změň na produkční doménu po nasazení
+    const payload = {
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      utm_content: urlParams.get('utm_content'),
+      utm_term: urlParams.get('utm_term'),
+      referrer: document.referrer || 'direct',
+      url: window.location.href
+    };
+
+    fetch(trackingUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(response => response.json())
+    .then(data => console.log('UTM parameters logged successfully:', data))
+    .catch(error => console.error('Error logging UTM parameters:', error));
+  }
 }
