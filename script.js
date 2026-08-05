@@ -128,6 +128,13 @@ window.addEventListener("load", () => {
           item.classList.add("hidden-item");
         } else {
           item.classList.remove("hidden-item");
+
+          // Lazy-load iframe source when shown to prevent player crash
+          const iframe = item.querySelector("iframe[data-src]");
+          if (iframe && !iframe.getAttribute("src")) {
+            iframe.setAttribute("src", iframe.getAttribute("data-src"));
+          }
+
           setTimeout(() => {
             item.classList.remove("faded-out");
           }, 20);
