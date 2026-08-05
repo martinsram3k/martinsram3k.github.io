@@ -453,6 +453,156 @@
             </div>
         </section>
 
+        <!-- ==================== TECH SWITCHER SECTION ==================== -->
+        <section class="tech-switcher-section animate-on-scroll">
+            <div class="tech-switcher-header">
+                <p class="tech-switcher-tag">Technology Stack</p>
+                <h2 class="tech-switcher-title">Multidisciplinary Stack</h2>
+                <p class="tech-switcher-desc">Clean code and detailed implementation. The tools and languages I use to power creative ideas.</p>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="tech-tabs">
+                <li><button class="tech-tab active" data-tab="video">video.pr</button></li>
+                <li><button class="tech-tab" data-tab="design">design.psd</button></li>
+                <li><button class="tech-tab" data-tab="web">web.php</button></li>
+                <li><button class="tech-tab" data-tab="hardware">hardware.cpp</button></li>
+            </ul>
+
+            <!-- Content Window -->
+            <div class="tech-content-window">
+                <!-- Video Tab -->
+                <div class="tech-pane active" data-pane="video">
+                    <div class="timeline-mock">
+                        <div class="timeline-track">
+                            <div class="track-label">V3 (Text)</div>
+                            <div class="track-content"><div class="clip-block clip-fx">Captions &amp; Effects.prproj</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">V2 (Adjust)</div>
+                            <div class="track-content"><div class="clip-block clip-fx" style="width: 80%; background-color: #c084fc;">Color_Grading_LUTs</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">V1 (Video)</div>
+                            <div class="track-content"><div class="clip-block clip-video">Main_Footage_4K.mp4</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">A1 (Audio)</div>
+                            <div class="track-content"><div class="clip-block clip-audio">Voiceover_Studio.wav</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">A2 (Music)</div>
+                            <div class="track-content"><div class="clip-block clip-bgm">Background_Beat_120BPM.mp3</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Tab -->
+                <div class="tech-pane" data-pane="design">
+                    <div class="layers-mock">
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon fx">FX</span>
+                                <span class="layer-name">Color Grading and style adjustments</span>
+                            </div>
+                            <span class="layer-visibility">👁️ visible</span>
+                        </div>
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon txt">TXT</span>
+                                <span class="layer-name">Typography and copywriting layers</span>
+                            </div>
+                            <span class="layer-visibility">👁️ visible</span>
+                        </div>
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon vec">VEC</span>
+                                <span class="layer-name">Vector icons and illustrations</span>
+                            </div>
+                            <span class="layer-visibility">👁️ visible</span>
+                        </div>
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon img">IMG</span>
+                                <span class="layer-name">Base image background / Product shot</span>
+                            </div>
+                            <span class="layer-visibility">👁️ visible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Tab -->
+                <div class="tech-pane" data-pane="web">
+                    <pre class="code-mock"><code><span class="comment">// routes/web.php</span>
+<span class="keyword">use</span> App\Http\Controllers\ProjectController;
+
+<span class="keyword">Route</span>::<span class="function">get</span>(<span class="string">'/project/{id}'</span>, <span class="keyword">function</span> ($id) {
+    <span class="keyword">return</span> Project::<span class="function">findOrFail</span>($id)-><span class="function">renderHtml</span>();
+})-><span class="function">middleware</span>(<span class="string">'cache:60'</span>);
+
+<span class="comment">// Render portfolio dynamically without full page reloads.</span></code></pre>
+                </div>
+
+                <!-- Hardware Tab -->
+                <div class="tech-pane" data-pane="hardware">
+                    <pre class="code-mock"><code><span class="comment">// src/main.cpp - Arduino core</span>
+<span class="keyword">void</span> <span class="function">loop</span>() {
+    <span class="keyword">if</span> (sensor.<span class="function">readTemperature</span>() &gt;= <span class="string">28.5</span>) {
+        fanController.<span class="function">setSpeed</span>(<span class="string">255</span>); // Max Speed
+        led.<span class="function">setRGB</span>(<span class="string">255</span>, <span class="string">26</span>, <span class="string">26</span>);     // Red LED signals warning status
+    }
+    <span class="function">delay</span>(<span class="string">1000</span>);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS SECTION ==================== -->
+        <section class="testimonials-section animate-on-scroll">
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Martin is an excellent video editor. Fast communication, precise cutting, and great ideas for our reels."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LO</div>
+                        <div class="testimonial-info">
+                            <h5>Lukáš Ondráček</h5>
+                            <span>Founder of Mimo Osnovy</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "His combination of IT skills and graphic design is exactly what we needed to build our platform products."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">K</div>
+                        <div class="testimonial-info">
+                            <h5>Klipni.eu Team</h5>
+                            <span>Video Editing SaaS</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Great cooperation on product photoshoots and promotional designs for our sports events."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">W</div>
+                        <div class="testimonial-info">
+                            <h5>WAFK Team</h5>
+                            <span>Strength Competitions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- ==================== CONTACT & BILLING SECTION ==================== -->
         <section id="kontakt" class="contact-section">
             <div class="contact-grid">

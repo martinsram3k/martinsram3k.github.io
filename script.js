@@ -135,6 +135,24 @@ window.addEventListener("load", () => {
       // Scroll to filter bar smoothly
       scrollToElement(".portfolio-filter-bar");
     });
+
+  // --- TECH SWITCHER LOGIC ---
+  const techTabs = document.querySelectorAll(".tech-tab");
+  const techPanes = document.querySelectorAll(".tech-pane");
+
+  techTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const targetTab = tab.getAttribute("data-tab");
+
+      // Update active tab button
+      techTabs.forEach((t) => t.classList.toggle("active", t === tab));
+
+      // Update active pane
+      techPanes.forEach((pane) => {
+        const paneName = pane.getAttribute("data-pane");
+        pane.classList.toggle("active", paneName === targetTab);
+      });
+    });
   });
 
   // --- MAIN NAVIGATION ---

@@ -453,6 +453,156 @@
             </div>
         </section>
 
+        <!-- ==================== TECH SWITCHER SECTION ==================== -->
+        <section class="tech-switcher-section animate-on-scroll">
+            <div class="tech-switcher-header">
+                <p class="tech-switcher-tag">Technologický Stack</p>
+                <h2 class="tech-switcher-title">Multioborový Ekosystém</h2>
+                <p class="tech-switcher-desc">Čistý kód a precizní zpracování. Nástroje a jazyky, kterými přivádím myšlenky k životu.</p>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="tech-tabs">
+                <li><button class="tech-tab active" data-tab="video">video.pr</button></li>
+                <li><button class="tech-tab" data-tab="design">design.psd</button></li>
+                <li><button class="tech-tab" data-tab="web">web.php</button></li>
+                <li><button class="tech-tab" data-tab="hardware">hardware.cpp</button></li>
+            </ul>
+
+            <!-- Content Window -->
+            <div class="tech-content-window">
+                <!-- Video Tab -->
+                <div class="tech-pane active" data-pane="video">
+                    <div class="timeline-mock">
+                        <div class="timeline-track">
+                            <div class="track-label">V3 (Text)</div>
+                            <div class="track-content"><div class="clip-block clip-fx">Titulky &amp; Efekty.prproj</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">V2 (Adjust)</div>
+                            <div class="track-content"><div class="clip-block clip-fx" style="width: 80%; background-color: #c084fc;">Color_Grading_LUTs</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">V1 (Video)</div>
+                            <div class="track-content"><div class="clip-block clip-video">Hlavni_Zaber_4K.mp4</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">A1 (Audio)</div>
+                            <div class="track-content"><div class="clip-block clip-audio">Voiceover_Studio.wav</div></div>
+                        </div>
+                        <div class="timeline-track">
+                            <div class="track-label">A2 (Music)</div>
+                            <div class="track-content"><div class="clip-block clip-bgm">Background_Beat_120BPM.mp3</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Tab -->
+                <div class="tech-pane" data-pane="design">
+                    <div class="layers-mock">
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon fx">FX</span>
+                                <span class="layer-name">Barevná korekce a styl (Color Grading)</span>
+                            </div>
+                            <span class="layer-visibility">👁️ viditelné</span>
+                        </div>
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon txt">TXT</span>
+                                <span class="layer-name">Typografie a textové vrstvy</span>
+                            </div>
+                            <span class="layer-visibility">👁️ viditelné</span>
+                        </div>
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon vec">VEC</span>
+                                <span class="layer-name">Vektorové ikony a ilustrace</span>
+                            </div>
+                            <span class="layer-visibility">👁️ viditelné</span>
+                        </div>
+                        <div class="layer-row">
+                            <div class="layer-left">
+                                <span class="layer-icon img">IMG</span>
+                                <span class="layer-name">Podkladový obrázek / Produktové foto</span>
+                            </div>
+                            <span class="layer-visibility">👁️ viditelné</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Tab -->
+                <div class="tech-pane" data-pane="web">
+                    <pre class="code-mock"><code><span class="comment">// routes/web.php</span>
+<span class="keyword">use</span> App\Http\Controllers\ProjectController;
+
+<span class="keyword">Route</span>::<span class="function">get</span>(<span class="string">'/project/{id}'</span>, <span class="keyword">function</span> ($id) {
+    <span class="keyword">return</span> Project::<span class="function">findOrFail</span>($id)-><span class="function">renderHtml</span>();
+})-><span class="function">middleware</span>(<span class="string">'cache:60'</span>);
+
+<span class="comment">// Dynamické načítání portfolia bez zbytečného přenačítání stránky.</span></code></pre>
+                </div>
+
+                <!-- Hardware Tab -->
+                <div class="tech-pane" data-pane="hardware">
+                    <pre class="code-mock"><code><span class="comment">// src/main.cpp - Arduino core</span>
+<span class="keyword">void</span> <span class="function">loop</span>() {
+    <span class="keyword">if</span> (sensor.<span class="function">readTemperature</span>() &gt;= <span class="string">28.5</span>) {
+        fanController.<span class="function">setSpeed</span>(<span class="string">255</span>); <span class="comment">// Max Speed</span>
+        led.<span class="function">setRGB</span>(<span class="string">255</span>, <span class="string">26</span>, <span class="string">26</span>);     <span class="comment">// LED signalizuje přehřátí</span>
+    }
+    <span class="function">delay</span>(<span class="string">1000</span>);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS SECTION ==================== -->
+        <section class="testimonials-section animate-on-scroll">
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        „Martin je skvělý video editor. Rychlá komunikace, precizní střih a super nápady pro naše reels.“
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LO</div>
+                        <div class="testimonial-info">
+                            <h5>Lukáš Ondráček</h5>
+                            <span>Zakladatel Mimo Osnovy</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        „Jeho kombinace IT studia a grafického designu je přesně to, co jsme potřebovali pro vývoj našich produktů.“
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">K</div>
+                        <div class="testimonial-info">
+                            <h5>Tým Klipni.eu</h5>
+                            <span>Video Editing SaaS</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        „Skvělá spolupráce na produktových fotkách a grafice pro naše sportovní akce.“
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">W</div>
+                        <div class="testimonial-info">
+                            <h5>Tým WAFK</h5>
+                            <span>Silové soutěže</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- ==================== CONTACT & BILLING SECTION ==================== -->
         <section id="kontakt" class="contact-section">
             <div class="contact-grid">
