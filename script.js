@@ -135,6 +135,7 @@ window.addEventListener("load", () => {
       // Scroll to filter bar smoothly
       scrollToElement(".portfolio-filter-bar");
     });
+  });
 
   // --- TECH SWITCHER LOGIC ---
   const techTabs = document.querySelectorAll(".tech-tab");
