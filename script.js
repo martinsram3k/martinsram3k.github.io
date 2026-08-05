@@ -88,24 +88,50 @@ window.addEventListener("load", () => {
   const filterButtons = document.querySelectorAll(".portfolio-filter-btn");
   const categoryCards = document.querySelectorAll(".category-card");
   const portfolioItems = document.querySelectorAll(".portfolio-grid .portfolio-item");
+  const showMoreBtn = document.getElementById("show-more-portfolio");
 
-  const runFilter = (category) => {
+  let currentCategory = "vse";
+  let portfolioExpanded = false;
+
+  const runFilter = (category, resetExpand = true) => {
+    currentCategory = category;
+    if (resetExpand) {
+      portfolioExpanded = false;
+    }
+
     // Update active class on filter buttons
     filterButtons.forEach((btn) => {
       const btnFilter = btn.getAttribute("data-filter");
       btn.classList.toggle("active", btnFilter === category);
     });
 
-    // Hide/show portfolio items
+    // Hide/show portfolio items with mobile limit of 3
+    const isMobile = window.innerWidth < 768;
+    let matchingCount = 0;
+
     portfolioItems.forEach((item) => {
       const itemCategory = item.getAttribute("data-category");
-      const shouldShow = (category === "vse" || itemCategory === category || itemCategory === "cta");
+      const isCta = (itemCategory === "cta");
+      const matchesFilter = (category === "vse" || itemCategory === category);
+      const shouldShow = matchesFilter || isCta;
 
       if (shouldShow) {
-        item.classList.remove("hidden-item");
-        setTimeout(() => {
-          item.classList.remove("faded-out");
-        }, 20);
+        if (!isCta) {
+          matchingCount++;
+        }
+        
+        // Hide if we exceed 3 items on mobile and not expanded
+        const hideOnMobile = isMobile && !portfolioExpanded && matchingCount > 3 && !isCta;
+
+        if (hideOnMobile) {
+          item.classList.add("faded-out");
+          item.classList.add("hidden-item");
+        } else {
+          item.classList.remove("hidden-item");
+          setTimeout(() => {
+            item.classList.remove("faded-out");
+          }, 20);
+        }
       } else {
         item.classList.add("faded-out");
         setTimeout(() => {
@@ -115,6 +141,22 @@ window.addEventListener("load", () => {
         }, 300);
       }
     });
+
+    // Handle "Show more" button visibility and label
+    if (showMoreBtn) {
+      const needsButton = isMobile && matchingCount > 3;
+      if (needsButton) {
+        showMoreBtn.style.display = "block";
+        const isCs = document.documentElement.lang === "cs";
+        if (portfolioExpanded) {
+          showMoreBtn.textContent = isCs ? "Zobrazit méně" : "Show less";
+        } else {
+          showMoreBtn.textContent = isCs ? "Zobrazit více" : "Show more";
+        }
+      } else {
+        showMoreBtn.style.display = "none";
+      }
+    }
   };
 
   // Filter Button click handlers
@@ -135,6 +177,19 @@ window.addEventListener("load", () => {
       // Scroll to filter bar smoothly
       scrollToElement(".portfolio-filter-bar");
     });
+  });
+
+  // Show More Button handler
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+      portfolioExpanded = !portfolioExpanded;
+      runFilter(currentCategory, false); // Keep current category, do not reset expand state
+    });
+  }
+
+  // Handle window resizing dynamically
+  window.addEventListener("resize", () => {
+    runFilter(currentCategory, false);
   });
 
   // --- TECH SWITCHER LOGIC ---
@@ -179,6 +234,9 @@ window.addEventListener("load", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // Inicializace filtru a limitu na mobilu
+  runFilter("vse");
 });
 
 /**
